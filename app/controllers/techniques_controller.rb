@@ -1,11 +1,11 @@
 class TechniquesController < ApplicationController
-  before_filter :require_login, :except => [:browse, :view]
+  before_action :require_login, except: [:browse, :view]
   helper_method :sort_column, :sort_direction
   
   #admin actions
   
   def index
-    @techniques = Technique.find(:all)
+    @techniques = Technique.all
   end
   
   def new
@@ -13,12 +13,12 @@ class TechniquesController < ApplicationController
   end
 
   def create
-    @technique = Technique.new(params[:technique])
+    @technique = Technique.new(technique_params)
 
     if @technique.save
-      redirect_to @technique, :notice => 'Technique was successfully created.'
+      redirect_to @technique, notice: 'Technique was successfully created.'
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -32,10 +32,10 @@ class TechniquesController < ApplicationController
 
   def update
     @technique = Technique.find(params[:id])
-    if @technique.update_attributes(params[:technique])
-      redirect_to @technique, :notice => 'Technique was successfully updated.'
+    if @technique.update(technique_params)
+      redirect_to @technique, notice: 'Technique was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -57,8 +57,8 @@ class TechniquesController < ApplicationController
   #application actions
 
   def browse
-    @artworks = Technique.find(params[:id]).artworks.order(sort_column + " " + sort_direction).page(params[:page]).per(60)
-    @base_path = 'techniques/'+params[:id]+'/browse'
+    @artworks = Technique.find(params[:id]).artworks.order("#{sort_column} #{sort_direction}").page(params[:page]).per(60)
+    @base_path = "techniques/#{params[:id]}/browse"
     @filters = true
     @filter_title = Technique.find(params[:id]).name
   end
@@ -71,5 +71,9 @@ class TechniquesController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+
+  def technique_params
+    params.require(:technique).permit(:name, :position)
   end
 end

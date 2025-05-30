@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :require_login
+  before_action :require_login
   
   def index
-    @users = User.find(:all)
+    @users = User.all
   end  
   
   def new
@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
-      redirect_to users_url, :notice => "User creation successful!"
+      redirect_to users_url, notice: "User creation successful!"
     else
       render :new
     end
@@ -28,10 +28,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to @user, :notice => 'User was successfully updated.'
+    if @user.update(user_params)
+      redirect_to @user, notice: 'User was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -39,5 +39,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_url
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
