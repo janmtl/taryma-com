@@ -1,13 +1,13 @@
 class StudiesController < ApplicationController
-  before_filter :require_login, :except => [:index, :view]
+  before_action :require_login, except: [:index, :view]
   
   #admin actions
   
   def index
     if logged_in?
-      @studies = Study.find(:all)
+      @studies = Study.all
     else
-      redirect_to :action => 'view', :id => Study.find(:first, :order => :position).id
+      redirect_to action: 'view', id: Study.order(:position).first.id
     end
   end
   
@@ -20,12 +20,12 @@ class StudiesController < ApplicationController
   end
 
   def create
-    @study = Study.new(params[:study])
+    @study = Study.new(study_params)
 
     if @study.save
-      redirect_to @study, :notice => 'Study was successfully created. <a href="'+new_study_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @study, notice: 'Study was successfully created. <a href="'+new_study_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -39,10 +39,10 @@ class StudiesController < ApplicationController
 
   def update
     @study = Study.find(params[:id])
-    if @study.update_attributes(params[:study])
-      redirect_to @study, :notice => 'Study was successfully updated.'
+    if @study.update(study_params)
+      redirect_to @study, notice: 'Study was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -62,5 +62,11 @@ class StudiesController < ApplicationController
     #If this is not the first study, find the previous one
     @prev_study_id = (@all_studies.first == @study.id) ? nil : @all_studies[@all_studies.index(@study.id)-1]
     @next_study_id = (@all_studies.last == @study.id) ? nil : @all_studies[@all_studies.index(@study.id)+1]
+  end
+
+  private
+  
+  def study_params
+    params.require(:study).permit(:description, :name, :position, attachments_attributes: [:id, :artwork_id, :_destroy], image_attachments_attributes: [:id, :image_id, :_destroy])
   end
 end

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :require_login, :except => [:view]
+  before_action :require_login, except: [:view]
   
   #admin actions
   
@@ -13,12 +13,12 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.new(params[:page])
+    @page = Page.new(page_params)
 
     if @page.save
-      redirect_to @page, :notice => 'Page was successfully created. <a href="'+new_page_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @page, notice: 'Page was successfully created. <a href="'+new_page_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -32,10 +32,10 @@ class PagesController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-    if @page.update_attributes(params[:page])
-      redirect_to @page, :notice => 'Page was successfully updated.'
+    if @page.update(page_params)
+      redirect_to @page, notice: 'Page was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -51,5 +51,11 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id]) if params[:id]
     @page = Page.find_by_slug(params[:slug]) if params[:slug]
     @base_path = 'p/'+@page.slug
+  end
+
+  private
+  
+  def page_params
+    params.require(:page).permit(:content, :title, :slug, page_attachments_attributes: [:id, :image_id, :_destroy])
   end
 end

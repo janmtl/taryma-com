@@ -1,5 +1,5 @@
 class SlidesController < ApplicationController
-  before_action :require_login, :except => [:browse]
+  before_action :require_login, except: [:browse]
   
   #admin actions
   
@@ -12,12 +12,12 @@ class SlidesController < ApplicationController
   end
 
   def create
-    @slide = Slide.new(params[:slide])
+    @slide = Slide.new(slide_params)
 
     if @slide.save
-      redirect_to @slide, :notice => 'Slide was successfully created. <a href="'+new_slide_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @slide, notice: 'Slide was successfully created. <a href="'+new_slide_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -31,10 +31,10 @@ class SlidesController < ApplicationController
 
   def update
     @slide = Slide.find(params[:id])
-    if @slide.update_attributes(params[:slide])
-      redirect_to @slide, :notice => 'Slide was successfully updated.'
+    if @slide.update(slide_params)
+      redirect_to @slide, notice: 'Slide was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -64,5 +64,11 @@ class SlidesController < ApplicationController
         render :json => @slides.map{|slide|{:image => slide.artwork.filename_url.to_s, :title => slide.artwork.title, :url => '#'}}
       }
     end
+  end
+  
+  private
+  
+  def slide_params
+    params.require(:slide).permit(:artwork_id, :position, :artwork_title)
   end
 end

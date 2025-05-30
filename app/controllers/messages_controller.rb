@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :require_login, :except => [:new, :create]
+  before_action :require_login, except: [:new, :create]
   
   #admin actions
   
@@ -12,13 +12,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(message_params)
 
     if @message.save
-      redirect_to new_message_path, :notice => 'Your request has been submitted. Thank you. We will respond to you in 48 hours.'
+      redirect_to new_message_path, notice: 'Your request has been submitted. Thank you. We will respond to you in 48 hours.'
       MessageMailer.notify(@message).deliver
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -28,10 +28,10 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
-    if @message.update_attributes(params[:message])
-      redirect_to @message, :notice => 'Message was successfully updated.'
+    if @message.update(message_params)
+      redirect_to @message, notice: 'Message was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
@@ -57,5 +57,11 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @message.destroy
     redirect_to messages_url
+  end
+
+  private
+  
+  def message_params
+    params.require(:message).permit(:content, :email, :from, :read, :date_created)
   end
 end
