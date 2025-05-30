@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_filter :require_login, :except => [:browse, :recent, :view]
+  before_action :require_login, except: [:browse, :recent, :view]
   helper_method :sort_column, :sort_direction
   
   #admin actions
@@ -23,12 +23,12 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    @artwork = Artwork.new(params[:artwork])
+    @artwork = Artwork.new(artwork_params)
 
     if @artwork.save
-      redirect_to @artwork, :notice => 'Artwork was successfully created. <a href="'+new_artwork_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @artwork, notice: 'Artwork was successfully created. <a href="'+new_artwork_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -42,10 +42,10 @@ class ArtworksController < ApplicationController
 
   def update
     @artwork = Artwork.find(params[:id])
-    if @artwork.update_attributes(params[:artwork])
-      redirect_to @artwork, :notice => 'Artwork was successfully updated.'
+    if @artwork.update(artwork_params)
+      redirect_to @artwork, notice: 'Artwork was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -91,5 +91,9 @@ class ArtworksController < ApplicationController
         csv << [artwork.title, artwork.date_created.strftime("%Y"), artwork.technique.name, artwork.xcm, artwork.ycm, artwork.xinch, artwork.yinch, artwork.category.name, artwork.catno]
       end
     end
+  end
+
+  def artwork_params
+    params.require(:artwork).permit(:catno, :date_created, :filename, :recent, :title, :xcm, :xinch, :ycm, :yinch, :technique_id, :category_id, :recent)
   end
 end

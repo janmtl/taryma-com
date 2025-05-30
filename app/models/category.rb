@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :position
-  has_many :artworks, :dependent => :restrict
-  validates_presence_of :name
-  validates_presence_of :position, :numericality => { :only_integer => true }
+  has_many :artworks, dependent: :restrict_with_error
+  validates :name, presence: true
+  validates :position, presence: true, numericality: { only_integer: true }
 end

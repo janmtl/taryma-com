@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :require_login, :except => [:browse, :view]
+  before_action :require_login, except: [:browse, :view]
   helper_method :sort_column, :sort_direction
   
   #admin actions
@@ -13,12 +13,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(params[:category])
+    @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category, :notice => 'Category was successfully created.'
+      redirect_to @category, notice: 'Category was successfully created.'
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -32,10 +32,10 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    if @category.update_attributes(params[:category])
-      redirect_to @category, :notice => 'Category was successfully updated.'
+    if @category.update(category_params)
+      redirect_to @category, notice: 'Category was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -71,5 +71,9 @@ class CategoriesController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+
+  def category_params
+    params.require(:category).permit(:name, :position)
   end
 end

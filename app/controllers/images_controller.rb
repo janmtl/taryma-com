@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_filter :require_login, :except => [:view]
+  before_action :require_login, except: [:view]
   
   #admin actions
   
@@ -22,12 +22,12 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(params[:image])
+    @image = Image.new(image_params)
 
     if @image.save
-      redirect_to @image, :notice => 'Image was successfully created. <a href="'+new_image_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @image, notice: 'Image was successfully created. <a href="'+new_image_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -41,10 +41,10 @@ class ImagesController < ApplicationController
 
   def update
     @image = Image.find(params[:id])
-    if @image.update_attributes(params[:image])
-      redirect_to @image, :notice => 'Image was successfully updated.'
+    if @image.update(image_params)
+      redirect_to @image, notice: 'Image was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -57,5 +57,11 @@ class ImagesController < ApplicationController
   #application actions
   def view
     @image = Image.find(params[:id])
+  end
+
+  private
+
+  def image_params
+    params.require(:image).permit(:filename, :description)
   end
 end

@@ -1,5 +1,5 @@
 class MenuItemsController < ApplicationController
-  before_filter :require_login
+  before_action :require_login
   
   #admin actions
   
@@ -12,12 +12,12 @@ class MenuItemsController < ApplicationController
   end
 
   def create
-    @menu_item = MenuItem.new(params[:menu_item])
+    @menu_item = MenuItem.new(menu_item_params)
 
     if @menu_item.save
-      redirect_to @menu_item, :notice => 'Menu Item was successfully created. <a href="'+new_menu_item_path+'" class="btn">Create another</a>'.html_safe
+      redirect_to @menu_item, notice: 'Menu Item was successfully created. <a href="'+new_menu_item_path+'" class="btn">Create another</a>'.html_safe
     else
-      render :action => "new"
+      render :new
     end
   end
   
@@ -31,10 +31,10 @@ class MenuItemsController < ApplicationController
 
   def update
     @menu_item = MenuItem.find(params[:id])
-    if @menu_item.update_attributes(params[:menu_item])
-      redirect_to @menu_item, :notice => 'Menu Item was successfully updated.'
+    if @menu_item.update(menu_item_params)
+      redirect_to @menu_item, notice: 'Menu Item was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -42,5 +42,11 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
     redirect_to menu_items_url
+  end
+
+  private
+
+  def menu_item_params
+    params.require(:menu_item).permit(:label, :path, :position)
   end
 end
