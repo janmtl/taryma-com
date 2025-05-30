@@ -1,0 +1,12 @@
+%h1 Categories
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th Position (for menu)
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= link_to (category.name.blank? ? "none" : category.name), category
+        %td= category.position
+= link_to "New Category", new_category_path, {:class => 'btn btn-primary big'}

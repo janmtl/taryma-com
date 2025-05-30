@@ -1,0 +1,28 @@
+- content_for :scripts do
+  = javascript_include_tag 'nested_forms'
+= simple_form_for(@study, :html => {:class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description, :input_html => { :rows => 10 }
+    = f.input :position
+    .well
+      %h3 Artworks
+      .attachments
+        = f.fields_for :attachments do |builder|
+          = render :partial => "form_attachment", :locals => {:f => builder, :target_id => builder.object_id}
+      = link_to_add_fields "Add Artwork", f, :attachments
+
+    .well
+      %h3 Images
+      .attachments
+        = f.fields_for :image_attachments do |builder|
+          = render :partial => "form_image_attachment", :locals => {:f => builder, :target_id => builder.object_id}
+      = link_to_add_fields "Add Image", f, :image_attachments
+
+  .form-actions
+    = f.button :submit, {:class => 'btn btn-primary'}
+    = link_to '<i class="icon-remove"></i> Cancel'.html_safe, studies_path, {:class => 'btn'}
+
+= render "shared/modal"

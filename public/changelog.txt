@@ -1,0 +1,7 @@
+Immediate to-do's
+ - check if 404 errors redirect to log-in screen
+ - need to find lost artworks
+ - add right-hand-side image to contacts
+
+Future enhancements
+ - Drag'n'drop re-ordering of attachments

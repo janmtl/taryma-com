@@ -1,0 +1,29 @@
+- content_for :menu do
+  = render :partial => "shared/studies_nav"
+
+%table.study
+  %tr
+    %td.previous
+      .btn= link_to '&laquo;'.html_safe, view_study_path(@prev_study_id) unless @prev_study_id.nil?
+
+    - if @study.description.blank?
+      %td.name-only= @study.name
+    - else
+      %td.name= @study.name
+      %td.description= @study.description.html_safe
+      
+    %td.next
+      .btn= link_to '&raquo;'.html_safe, view_study_path(@next_study_id) unless @next_study_id.nil?
+
+.attachments
+  - @study.artworks.each do |artwork|
+    .attachment
+      .thumbnail= link_to image_tag(artwork.filename_url(:browsing)), view_artwork_path(artwork), {:rel => 'nofollow fancybox', :data => {:fancybox => artwork.filename_url, :title => "#{artwork.title} | #{artwork.technique.name}, #{artwork.category.name} | #{artwork.date_created.strftime("%Y")}, Cat. No. #{artwork.catno}, #{artwork.xcm or '-'}x#{artwork.ycm or '-'}cm (#{artwork.xinch or '-'}x#{artwork.yinch or '-'}&quot;)".html_safe}}
+  - @study.images.each do |image|
+    .attachment
+      .thumbnail= link_to image_tag(image.filename_url(:browsing)), view_image_path(image), {:rel => 'nofollow fancybox', :data => {:fancybox => image.filename_url, :title => "#{image.description}".html_safe}}
+
+
+.fixed-bottom
+  .btn
+    %a{:href => browse_artworks_path} Go to Full Catalog &raquo;

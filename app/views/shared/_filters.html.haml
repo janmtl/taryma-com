@@ -1,0 +1,28 @@
+#filter_blackout
+
+#gallery_form
+  = form_tag({:action => "browse"}, {:method => 'get', :id => 'search_form'}) do
+    = hidden_field_tag :direction, params[:direction]
+    = hidden_field_tag :sort, params[:sort]
+    .filter_line
+      %ul.allworks
+        %li
+          = sortable "title", "Sort by title"
+          = sortable "catno", "Sort by date"
+        %li
+          .header.inset All works
+          %ul
+            %li{:class => (controller.controller_name == 'artworks' ? 'no-highlight' : '')}= link_to ("View all (" + Artwork.count(:all).to_s + ")"), :action => "browse", :controller => "artworks"
+      %ul.categories
+        %li
+          .header.inset Categories
+          %ul
+            - Category.find(:all, :conditions => "id <> 0", :order => :position).each do |category|
+              %li{:class => ((controller.controller_name == "categories" && category.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (category.name + " (" + category.artworks.count(:all).to_s + ")"), :action => "browse", :controller => "categories", :id => category.id
+      %ul.techniques
+        %li
+          .header.inset Techniques
+          %ul
+            - Technique.find(:all, :conditions => "id <> 0", :order => :position).each do |technique|
+              %li{:class => ((controller.controller_name == "techniques" && technique.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (technique.name + " (" + technique.artworks.count(:all).to_s + ")"), :action => "browse", :controller => "techniques", :id => technique.id
+  .float-clear

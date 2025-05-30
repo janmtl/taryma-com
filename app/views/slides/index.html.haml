@@ -1,0 +1,9 @@
+%h1 Intro slideshow
+%ul.sortable{:data => {:update => sort_slides_url}}
+  - @slides.each do |slide|
+    = content_tag_for(:li, slide) do
+      = image_tag (slide.artwork.nil? ? "none" : slide.artwork.filename_url(:handle))
+      = link_to (slide.artwork.nil? ? "none" : slide.artwork.title), slide
+      = link_to '<i class="icon-remove-circle"></i>'.html_safe, slide_path(slide), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn pull-right'}
+= link_to "New Slide", new_slide_path, {:class => 'btn btn-primary big'}
+    

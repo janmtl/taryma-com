@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.ewataryma.com/</loc>
+  <lastmod>2013-03-02T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/studies</loc>
+  <lastmod>2013-03-02T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/p/bio</loc>
+  <lastmod>2013-02-19T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/p/exhibitions</loc>
+  <lastmod>2013-02-19T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/p/buy</loc>
+  <lastmod>2013-02-19T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/messages/new</loc>
+  <lastmod>2013-02-19T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.ewataryma.com/artworks/browse</loc>
+  <lastmod>2013-02-19T16:57:46+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+</urlset>

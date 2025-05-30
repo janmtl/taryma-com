@@ -1,0 +1,16 @@
+!!!
+%html{:lang => "en"}
+  %head
+  %title Ewa Taryma Myslinski
+  = stylesheet_link_tag "slideshow"
+  = javascript_include_tag "slideshow"
+  = yield :head
+  = csrf_meta_tag
+
+  %meta{:name => "description", :content => "Personal site of the artist and gallery of her work"}
+  %meta{:name => "keywords", :content => "ewa, taryma, myslinski, taryma-myslinski, art, artist"}
+  %meta{:name => "author", :content => "Ewa Taryma-Myslinski"}
+  %meta(http-equiv= "content-type" content="text/html;charset=UTF-8")
+
+  %body{:class => params[:controller]}
+    = yield

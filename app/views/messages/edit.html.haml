@@ -1,0 +1,23 @@
+%h1= "Message from "+@message.from
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td From
+      %td= @message.from
+    %tr
+      %td Email
+      %td= @message.email
+    %tr
+      %td Date received
+      %td= @message.date_created
+    %tr
+      %td Content
+      %td= @message.content
+
+.btn-group
+  - if @message.read
+    = link_to 'Mark as unread'.html_safe, mark_unread_message_path(@message), {:method => :put,  :class => 'btn'}
+  - else
+    = link_to 'Mark as read'.html_safe, mark_read_message_path(@message), {:method => :put, :class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete Message'.html_safe, message_path(@message), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to messages management'.html_safe, messages_path, {:class => 'btn'}

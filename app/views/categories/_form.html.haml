@@ -1,0 +1,10 @@
+= simple_form_for(@category, :html => {:class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :position
+
+  .form-actions
+    = f.button :submit, {:class => 'btn btn-primary'}
+    = link_to '<i class="icon-remove"></i> Cancel'.html_safe, categories_path, {:class => 'btn'}

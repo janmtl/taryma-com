@@ -1,0 +1,24 @@
+%h1 Administration panel
+%br
+.row
+  .span4
+    .well
+      %h3 Studies
+      %p= 'Total studies: '+@studies_count.to_s
+      = link_to "Manage studies", studies_path, {:class => 'btn btn-primary'}
+  .span4
+    .well
+      %h3 Catalog
+      %p= 'Total artworks: '+@artworks_count.to_s
+      = link_to "Manage artworks", artworks_path, {:class => 'btn btn-primary'}
+  .span4
+    .well
+      %h3 Pages
+      %p= 'Total pages: '+@pages_count.to_s
+      = link_to "Manage pages", pages_path, {:class => 'btn btn-primary'}
+
+.well
+  %h3 Changelog
+  %pre= (render :file => 'public/changelog.txt').gsub(/\n/, '<br/>'.html_safe).html_safe
+  %h3 Status
+  %pre= Rails.env

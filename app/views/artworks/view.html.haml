@@ -1,0 +1,20 @@
+%p{:style => 'text-align: center;'}
+  %span.title= @artwork.title
+  %span.subtitle
+    = @artwork.technique.name
+    , 
+    = @artwork.category.name
+  %span.details
+    = @artwork.date_created.strftime("%Y")
+    , Cat. No. 
+    = @artwork.catno
+    , 
+    = @artwork.xcm
+    x
+    = @artwork.ycm
+    cm (
+    = @artwork.xinch
+    x
+    = @artwork.yinch
+    &quot;)
+%p{:style => 'text-align: center;'}= image_tag @artwork.filename_url, :height => '50%', :width => '50%'

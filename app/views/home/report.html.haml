@@ -1,0 +1,29 @@
+%h1 Regeneration report
+
+- if @artworks
+  %h3 Artworks
+  %table.table.table-bordered.table-striped
+    %thead
+      %th Artwork title
+      %th Artwork filename
+      %th Artwork exists?
+      %th Status
+    %tbody
+      - @artworks.each do |key, artwork|
+        %tr
+          %td= artwork[:title]
+          %td= artwork[:filename]
+          %td= artwork[:exists]
+          %td= artwork[:status]
+
+- if @images
+  %h3 Images
+  %table.table.table-bordered.table-striped
+    %thead
+      %th Image filename
+      %th Status
+    %tbody
+      - @images.each do |key, image|
+        %tr
+          %td= image[:filename]
+          %td= image[:status]

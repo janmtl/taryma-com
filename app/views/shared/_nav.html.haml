@@ -1,0 +1,36 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a{:href => home_index_path}
+        %span.brand Admin Panel
+      %ul.nav
+        %li= link_to "Home", home_index_path
+
+        %li.dropdown
+          = link_to "Edit<b class='caret'></b>".html_safe, '#', {:class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}}
+          %ul.dropdown-menu
+            %li.nav-header Sections
+            %li= link_to "Studies", studies_path
+            %li= link_to "Catalog", artworks_path
+            %li= link_to "Pages", pages_path
+            %li.divider
+            %li.nav-header Organization
+            %li= link_to "Categories", categories_path
+            %li= link_to "Techniques", techniques_path
+            %li= link_to "Images", images_path
+            %li= link_to "Menu", menu_items_path
+
+        %li.dropdown
+          = link_to "Tools<b class='caret'></b>".html_safe, '#', {:class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}}
+          %ul.dropdown-menu
+            %li= link_to "View messages", messages_path
+            %li= link_to "Intro slideshow", slides_path
+            %li= link_to "Regenerate all thumbnails", home_regenerate_path
+            %li= link_to "Users", users_path
+
+      %ul.nav.pull-right
+        %li
+          - if current_user
+            = link_to "Log out", logout_path
+          - else
+            = link_to "Log in", login_path

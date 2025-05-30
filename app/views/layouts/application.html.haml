@@ -1,0 +1,25 @@
+!!!
+%html{:lang => "en"}
+  %head
+  %title Ewa Taryma-Myslinski
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "application"
+  <!--[if !IE]> -->
+  = javascript_include_tag "jquery.address.fancybox"
+  <!-- <![endif]-->
+  = yield :head
+  = csrf_meta_tag
+
+  %meta{:name => "description", :content => "Personal site of the artist and gallery of her work"}
+  %meta{:name => "keywords", :content => "ewa, taryma, myslinski, taryma-myslinski, art, artist"}
+  %meta{:name => "author", :content => "Ewa Taryma-Myslinski"}
+  %meta(http-equiv= "content-type" content="text/html;charset=UTF-8")
+
+  %body{:class => params[:controller], :data => {:base_path => @base_path}}
+    = render "shared/menu"
+    = render "shared/filters" if @filters
+    - flash.each do |key, msg|
+      .alert{:class => 'alert-' + key.to_s}
+        = msg.html_safe
+    = yield
+    = render "shared/footer"

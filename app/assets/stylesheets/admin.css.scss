@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require dataTables/jquery.dataTables.bootstrap
+*/
+
+@import "compass_twitter_bootstrap";
+
+body { 
+  padding: 60px 0px;
+}
+
+.dataTable .title{
+  font-size: $baseFontSize * 1.25;
+  line-height: $baseLineHeight * 1.25;
+}
+.dataTable .subtitle{
+  color: $grayLight;
+}
+
+// fix flash classes from rails to bootstrap
+.alert-notice{
+  @extend .alert-success
+}
+.alert-warning{
+  @extend .alert-error
+}
+
+//Nested Forms
+  .attachments{
+    overflow-y: scroll; max-height: 200px;
+    margin: 10px -19px;
+    background-color: $grayLighter;
+    border-width: 1px 0px 1px 0px; border-color: $white; border-style: solid; @include box-shadow($grayLight -3px 0px 3px inset);
+    .attachment{
+      margin: 10px; padding: 10px;
+      float: left; width: 100px; height: 100px;
+      background-color: $white; background-size: cover; background-repeat: no-repeat; background-position: center center;
+      @include border-radius(5px); border: 1px solid $grayLight; @include box-shadow($grayLight 1px 1px 1px);
+    }
+  }
+
+
+//Modals
+  #association-modal{
+    .modal-body{height: 360px;}
+  }
+
+  ul.modal-images{
+    margin: 0px;
+    li{
+      display: block; float: left;
+      margin:0px 10px 10px 0px; padding: 10px;
+      list-style: none;
+      width: 135px; height: 200px;
+      background-color: $grayLighter;
+      text-align: center;
+      .imgbox{
+        vertical-align: middle; display: table-cell;
+        width: 135px; height: 135px; margin: 0px; padding: 0px;
+      }
+      a{
+        display: block;
+        width: 125px;
+        padding: 5px; margin: 0px;
+        background-color: $grayLighter;
+      }
+    }
+  }
+
+  
+//Sortables  
+  ul.sortable{
+    list-style: none; margin: 0px;
+    li{
+      @include border-radius(5px);
+      border: 1px solid $grayLighter;
+      padding: 5px; margin: 5px;
+      cursor: move;
+      line-height: 3em;
+    }
+  }

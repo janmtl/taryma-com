@@ -1,0 +1,11 @@
+= simple_form_for(@menu_item, :html => {:class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :label
+    = f.input :path
+    = f.input :position
+
+  .form-actions
+    = f.button :submit, {:class => 'btn btn-primary'}
+    = link_to '<i class="icon-remove"></i> Cancel'.html_safe, menu_items_path, {:class => 'btn'}

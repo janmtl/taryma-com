@@ -1,0 +1,10 @@
+= simple_form_for(@image, :html => {:class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :filename, :as => :image_preview, :input_html => {:preview_version => :modal}
+    = f.input :description
+
+  .form-actions
+    = f.button :submit, {:class => 'btn btn-primary'}
+    = link_to '<i class="icon-remove"></i> Cancel'.html_safe, images_path, {:class => 'btn'}

@@ -1,0 +1,17 @@
+%h1 Exodus report
+
+- if @artworks
+  %h3 Artworks
+  %table.table.table-bordered.table-striped
+    %thead
+      %th Artwork title
+      %th From
+      %th To
+      %th Status
+    %tbody
+      - @artworks.each do |key, artwork|
+        %tr
+          %td= artwork[:title]
+          %td= artwork[:from]
+          %td= artwork[:to]
+          %td= artwork[:status]

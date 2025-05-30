@@ -1,0 +1,6 @@
+- image = @page.images.find_by_id(f.object.image_id)
+.attachment{:name => target_id, :style => 'background-image: url("' + (image ? image.filename_url(:modal) : '') + '");'}
+  = f.hidden_field :_destroy, {:id => target_id.to_s+"_destroy"}
+  = f.hidden_field :image_id, {:id => target_id}
+  = link_to '<i class="icon-pencil"></i>'.html_safe, '#', {:class => 'browse_fields btn', :data => {:source => images_path, :title => 'Choose an image', :target => target_id}}
+  = link_to '<i class="icon-remove-circle"></i>'.html_safe, '#', {:class => 'remove_fields btn', :data => {:target => target_id}}

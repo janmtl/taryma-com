@@ -1,0 +1,13 @@
+%h1 Slide
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Artwork
+      %td= @slide.artwork.nil? ? "none" : @slide.artwork.title
+    %tr
+      %td Position
+      %td= @slide.position
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit slide'.html_safe, edit_slide_path(@slide), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete slide'.html_safe, slide_path(@slide), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to slide management'.html_safe, slides_path, {:class => 'btn'}

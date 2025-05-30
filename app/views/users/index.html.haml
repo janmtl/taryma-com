@@ -1,0 +1,10 @@
+%h1 Users
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Username
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to (user.username.blank? ? "none" : user.username), edit_user_path(user)
+= link_to "New User", new_user_path, {:class => 'btn btn-primary big'}

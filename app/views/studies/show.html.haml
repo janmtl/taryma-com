@@ -1,0 +1,34 @@
+%h1= @study.name
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Name
+      %td= @study.name
+    %tr
+      %td Description
+      %td= @study.description
+    %tr
+      %td Position
+      %td= @study.position
+    %tr
+      %td{:colspan => 2}
+        %strong Attached artworks
+    - @study.artworks.each_with_index do |artwork, i|
+      %tr
+        %td 
+          Attached artwork 
+          = (i+1).to_s
+        %td= artwork.title
+    %tr
+      %td{:colspan => 2}
+        %strong Attached images
+    - @study.images.each_with_index do |image, i|
+      %tr
+        %td 
+          Attached image 
+          = (i+1).to_s
+        %td= image.filename
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit study'.html_safe, edit_study_path(@study), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete study'.html_safe, study_path(@study), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to studies management'.html_safe, studies_path, {:class => 'btn'}

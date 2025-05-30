@@ -1,0 +1,28 @@
+%h1= @page.title
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Title
+      %td= @page.title
+    %tr
+      %td ID
+      %td= @page.id
+    %tr
+      %td Slug
+      %td= @page.slug
+    %tr
+      %td Content
+      %td= @page.content
+    %tr
+      %td{:colspan => 2}
+        %strong Attached images
+    - @page.images.each_with_index do |image, i|
+      %tr
+        %td 
+          Attached image 
+          = (i+1).to_s
+        %td= image.filename
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit page'.html_safe, edit_page_path(@page), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete page'.html_safe, page_path(@page), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to pages management'.html_safe, pages_path, {:class => 'btn'}

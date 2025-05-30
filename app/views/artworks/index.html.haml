@@ -1,0 +1,21 @@
+%h1 Catalog
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Title
+      %th Catalog No.
+      %th Technique
+      %th Category
+      %th Size
+      %th Recent?
+  %tbody
+    - @artworks.each do |artwork|
+      %tr
+        %td= link_to (artwork.title.blank? ? "none" : artwork.title), artwork
+        %td= artwork.catno
+        %td= (artwork.technique.name || "none")
+        %td= artwork.category.nil? ? "none" : artwork.category.name
+        %td= "#{artwork.xcm or '-'}x#{artwork.ycm or '-'}cm (#{artwork.xinch or '-'}x#{artwork.yinch or '-'}&quot;)".html_safe
+        %td= artwork.recent ? '<span style="display:none;">0</span><i class="icon-asterisk"></i>'.html_safe : '<span style="display:none;">1</span>'.html_safe 
+= link_to "New Artwork", new_artwork_path, {:class => 'btn btn-primary big'}
+    

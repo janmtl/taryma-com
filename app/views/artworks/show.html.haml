@@ -1,0 +1,41 @@
+%h1= @artwork.title
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Title
+      %td= @artwork.title
+    %tr
+      %td Catalog Number
+      %td= @artwork.catno
+    %tr
+      %td Date created
+      %td= @artwork.date_created
+    %tr
+      %td Filename
+      %td
+        = image_tag @artwork.filename_url(:browsing)
+        = @artwork.filename_url()
+    %tr
+      %td Size
+      %td
+        = @artwork.xcm
+        cm x 
+        = @artwork.ycm
+        cm (
+        = @artwork.xinch
+        &quot; x
+        = @artwork.yinch
+        &quot;)
+    %tr
+      %td Technique
+      %td= @artwork.technique.nil? ? "none" : @artwork.technique.name
+    %tr
+      %td Category
+      %td= @artwork.category.nil? ? "none" : @artwork.category.name
+    %tr
+      %td Recent?
+      %td= @artwork.recent ? 'Yes' : 'No'
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit artwork'.html_safe, edit_artwork_path(@artwork), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete artwork'.html_safe, artwork_path(@artwork), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to artwork management'.html_safe, artworks_path, {:class => 'btn'}

@@ -1,0 +1,16 @@
+%h1 Image
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Filename
+      %td= @image.filename
+    %tr
+      %td Description
+      %td= @image.description
+    %tr
+      %td Image
+      %td= image_tag @image.filename_url(:browsing)
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit image'.html_safe, edit_image_path(@image), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete image'.html_safe, image_path(@image), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to image management'.html_safe, images_path, {:class => 'btn'}

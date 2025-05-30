@@ -1,0 +1,14 @@
+%h1 Menu Items
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Label
+      %th Path
+      %th Position
+  %tbody
+    - @menu_items.each do |menu_item|
+      %tr
+        %td= link_to (menu_item.label.blank? ? "no label" : menu_item.label), menu_item
+        %td= menu_item.path.blank? ? "no path" : menu_item.path
+        %td= menu_item.position
+= link_to "New Menu Item", new_menu_item_path, {:class => 'btn btn-primary big'}

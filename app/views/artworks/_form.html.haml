@@ -1,0 +1,19 @@
+= simple_form_for(@artwork, :html => {:class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :catno
+    = f.input :date_created
+    = f.input :filename, :as => :image_preview, :input_html => {:preview_version => :modal}
+    = f.input :xcm
+    = f.input :ycm
+    = f.input :xinch
+    = f.input :yinch
+    = f.input :category_id , :collection => Category.all(:order => 'name'), :prompt => "Choose a category"
+    = f.input :technique_id , :collection => Technique.all(:order => 'name'), :prompt => "Choose a technique"
+    = f.input :recent
+
+  .form-actions
+    = f.button :submit, {:class => 'btn btn-primary'}
+    = link_to '<i class="icon-remove"></i> Cancel'.html_safe, artworks_path, {:class => 'btn'}

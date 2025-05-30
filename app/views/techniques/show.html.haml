@@ -1,0 +1,13 @@
+%h1= @technique.name
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Name
+      %td= @technique.name
+    %tr
+      %td Position
+      %td= @technique.position
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit technique'.html_safe, edit_technique_path(@technique), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete technique'.html_safe, technique_path(@technique), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to technique management'.html_safe, techniques_path, {:class => 'btn'}

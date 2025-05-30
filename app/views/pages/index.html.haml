@@ -1,0 +1,16 @@
+%h1 Pages
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Title
+      %th ID
+      %th Slug
+      %th Images
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td= link_to (page.title.blank? ? "none" : page.title), page
+        %td= page.id
+        %td= page.slug.nil? ? "none" : page.slug
+        %td= page.images.nil? ? "none" : page.images.count
+= link_to "New Page", new_page_path, {:class => 'btn btn-primary big'}

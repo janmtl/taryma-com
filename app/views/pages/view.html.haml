@@ -1,0 +1,8 @@
+.page
+  %h1= @page.title
+  %p= @page.content.html_safe
+
+.attachments
+  - @page.images.each do |image|
+    .attachment
+      .thumbnail= link_to image_tag(image.filename_url(:browsing)), view_image_path(image), {:rel => 'nofollow fancybox', :data => {:fancybox => image.filename_url}}

@@ -1,0 +1,16 @@
+%h1= @menu_item.label
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td Label
+      %td= @menu_item.label
+    %tr
+      %td Path
+      %td= @menu_item.path
+    %tr
+      %td Position
+      %td= @menu_item.position
+.btn-group
+  = link_to '<i class="icon-pencil"></i> Edit menu item'.html_safe, edit_menu_item_path(@menu_item), {:class => 'btn'}
+  = link_to '<i class="icon-remove-circle"></i> Delete menu item'.html_safe, menu_item_path(@menu_item), {:confirm => 'Are you sure?', :method => :delete, :class => 'btn'}
+  = link_to 'Return to menu management'.html_safe, menu_items_path, {:class => 'btn'}

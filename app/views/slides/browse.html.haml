@@ -1,0 +1,11 @@
+.content
+  .btn
+    =link_to(studies_path) do
+      %span.small Skip Intro
+      &raquo;
+    %span.subtitle
+      Painter
+.images{:data => {:slide_interval => @slide_interval}}
+  = image_tag 'spinner.gif', :class => 'spinner', :alt => ''
+  - @slides.each_with_index do |slide, index|
+    = image_tag slide.artwork.filename_url(:screen), :id => index, :class => 'slide', :alt => ''

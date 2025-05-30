@@ -1,0 +1,12 @@
+%h1 Techniques
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th Position (for menu)
+  %tbody
+    - @techniques.each do |technique|
+      %tr
+        %td= link_to (technique.name.blank? ? "none" : technique.name), technique
+        %td= technique.position
+= link_to "New Technique", new_technique_path, {:class => 'btn btn-primary big'}

@@ -1,0 +1,15 @@
+%h1 Messages
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th New?
+      %th From
+      %th Email
+      %th Date received
+  %tbody
+    - @messages.each do |message|
+      %tr
+        %td= message.read ? '<span style="display:none;">1</span>'.html_safe : '<span style="display:none;">0</span><i class="icon-asterisk"></i>'.html_safe
+        %td= link_to (message.from.blank? ? "no sender" : message.from), edit_message_path(message)
+        %td= message.email
+        %td= message.date_created

@@ -1,0 +1,19 @@
+!!!
+%html{:lang => "en"}
+  %head
+  %title Taryma Administrative Panel
+  = stylesheet_link_tag "admin"
+  = javascript_include_tag "admin"
+  = yield :head
+  = csrf_meta_tag
+  %body{:class => params[:controller]}
+    = render "shared/nav"
+    // %pre= params.to_s
+    .container
+      - flash.each do |key, msg|
+        .alert{:class => 'alert-' + key.to_s}
+          %a{:class => 'close', :data => {:dismiss => 'alert'}} x
+          = msg.html_safe
+      = yield
+      = render "shared/footer"
+    = render "shared/scripts"

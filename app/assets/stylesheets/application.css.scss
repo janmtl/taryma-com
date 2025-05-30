@@ -1,0 +1,333 @@
+/*
+ * application.css
+ *
+ *= require_self
+ *= require fancybox
+*/
+
+@import "compass/css3";
+
+//Colors
+$blackstone: #2A2A2C;
+$pewter: #6A6A6C;
+$white: #FFF;
+$black: #000;
+$sand: darken($white, 20%);
+$link_highlight: $white;
+$link_color: $sand;
+$shadow_color: $black;
+$text_color: $white;
+$artwork_border: $black;
+
+//Typography
+$font_size: 14px;
+
+//Sizes
+$shadow_spread: 5px;
+$default_radius: 5px;
+$page_width: 940px;
+$filters_width: 260px;
+$navheight: 52px;
+
+//Mixins
+  @mixin nav-buttons($float) {
+    margin: 0px; height: 52px; float: $float; padding: 0px;
+    li{
+      display: block; float: left; list-style: none; margin: 0px; padding: 0px;
+      font-size: 14px; line-height: 18px; height: 52px; font-weight: bold;
+      border-left: 1px solid $pewter;
+      border-right: 1px solid $pewter;
+      border-#{$float}: none;
+      &.selected{background-color: $pewter;}
+      a{
+        display: block; color: $link_color; text-decoration: none; padding: 17px 10px; cursor: pointer;
+        &:hover{color: $link_highlight;}
+      }
+    }
+  }
+  @mixin study-name{
+    color: darken($text_color, 20%);
+    font-size: 40px; font-weight: lighter; text-align: right; vertical-align: middle;
+  }
+  @mixin study-link($float){
+    width: 44px;
+    text-align: $float;
+    vertical-align: middle;
+  }
+  @mixin form-inputs{
+    border: none; @include border-radius(5px);
+  }
+
+
+
+//Begin Scaffolding
+
+//Global definitions
+  body{
+    margin:0px; padding: 0px;
+    
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; text-align: center;
+
+    background: $pewter;
+    font-size: $font_size;
+    &.artworks, &.messages, &.categories, &.techniques{text-align: left;}
+    //Remove the footer on studies pages
+    &.studies footer{display:none;}
+  }
+  a{
+    text-decoration: none; border: none;
+    color: $link_color;
+    &:hover{color: $link_highlight;}
+  }
+  img{border: none;}
+  footer{text-align: center; margin-top: 3em;}
+  div.float-clear{width: 100%; clear: both;}
+  //Generic Button
+  div.btn{
+    text-align: center; padding: 10px; font-size: 30px; display: block;
+    a{
+      padding: 20px; display: block;
+      background-color: $blackstone; color: $text_color;
+      @include box-shadow(inset 1px 1px 1px lighten($shadow_color, 10%));
+      @include border-radius(5px);
+      &:hover{
+        background-color: lighten($blackstone, 10%); color: $text_color;
+        @include box-shadow(inset 0px 0px 0px lighten($shadow_color, 10%));
+      }
+    }
+  }
+  //Attachment galleries
+  div.attachments{
+    background-color: $blackstone;
+    width: 100%; padding: 20px 20px 400px 20px;
+    border-top: 1px lighten($pewter, 20%) solid;
+    border-bottom: 1px lighten($pewter, 20%) solid;
+    div.attachment{
+      padding: 5px 10px 10px 10px; margin: 5px 10px 10px 10px; display: inline;
+      width: 350px; height: 350px; font-size: 12px;
+      color: $text_color;
+      div.thumbnail{
+        text-align:center; width:350px; margin-bottom:20px; display: inline;
+        img{max-height: 350px; max-width:350px; display: inline; border: none; border: 4px $artwork_border solid;}
+      }
+    }
+  }
+
+
+
+//Navigation
+  div.nav{
+    background-color: $blackstone;
+    width: 100%;
+    height: $navheight;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    z-index: +1; position: fixed;
+    line-height: 11px;
+    @include box-shadow($shadow_color 1px 0px $shadow_spread);
+    
+    //'Dots' for studies
+    ul.studies{
+      padding: 20px; margin: 0px; height: 11px; float: left;
+      li{
+        float: left; list-style: none; width: 12px; height: 12px; margin: 0px 5px 0px 0px;
+        a{
+          display: block; cursor: pointer; height: 12px; width: 12px;
+          background-image: url('nav-dot.png'); background-position: 0px -24px;
+          &.selected{background-position: 0px 0px; background-color: none;}
+          &:hover{background-position: 0px -12px;}
+        }
+      }
+    }
+    
+    //Regular buttons, the filters ul has some two-line typography
+    ul.pages{@include nav-buttons(right);}
+    ul.filters{
+      z-index: 900;
+      @include nav-buttons(left);
+      li{
+        width: $filters_width;
+        background-color: lighten($pewter, 20%);
+        background-image: url('filtersbackground.png');
+        a{
+          color: $white;
+          &.twoline{ padding: 12px 10px; line-height: 14px;}
+          &.desc{
+            background-image: url('chevrondownwhitewide.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+          }
+        }
+        span.menusubtitle{font-size: 9px; line-height: 14px; display: block;}
+      }
+    }
+  }
+  div.nav-spacer{
+    height: $navheight;
+    width: 100%;
+    display: block;
+  }
+      
+//Studies
+  table.study{
+    width: $page_width; margin: 10px auto 35px auto; padding: 20px;
+    color: $text_color; font-weight: normal;
+    td.name{
+      @include study-name;
+      width: 240px; padding-right: 20px;
+    }
+    td.name-only{
+      @include study-name; text-align: center;
+      width: 730px;
+    }
+    td.description{
+      width: 450px; padding-left: 20px; text-align: left; vertical-align: middle; line-height: 24px;
+      a{
+        color: #0000FF;
+        &:hover{color: #0000FF;}
+      }
+    }
+    td.previous{@include study-link(left);}
+    td.next{@include study-link(right);}
+  }
+
+  .fixed-bottom{
+    position: fixed; bottom: 0; right:0; z-index: 900; width: 350px;
+    .btn a{border: 1px solid $pewter;}
+  }
+
+//Pages
+  div.page{
+    width: $page_width; margin: 10px auto 35px auto; padding: 20px; text-align: left;
+    color: $text_color; font-weight: normal;
+    h1{ color: $text_color; font-size: 40px;}
+    .bio-image{margin-right: 25px;}
+    a{color: #0000FF;}
+    a:hover{color: #0000FF;}
+  }
+  
+//Contact
+  
+  body.messages{
+    //Title
+    h1{color: $text_color; font-size: 40px; text-align: center;}
+    color: $text_color; font-weight: normal;
+    
+    //Flash messages
+    .alert{
+        @include border-radius(5px); border: 1px solid $blackstone;
+        background-color: $sand; color: $blackstone;
+        font-size: 18px; font-weight: bold;
+        padding: 15px; margin: 15px auto; width: $page_width;
+        display: block; text-align: center;
+    }
+    
+    //The real scaffold
+    form{
+      width: $page_width;
+      margin: 0px auto;
+      div.form-inputs{
+        div.control-group{
+          display: block; margin: 1em 0em;
+          vertical-align: top;
+          
+          label{
+            display: inline-block;
+            width: $page_width*1/3 - 2*20px;
+            padding: 0.25em 20px;
+            text-align: right; vertical-align: top;
+          }
+          div.controls{
+            display: inline-block;
+            width: $page_width*2/3;
+            vertical-align: top;
+            span{display:block;}
+            input, textarea{padding: 3px; @include form-inputs;}
+            span.help-inline{font-size: font-size - 3px;}
+          }
+          &.hidden{display: none;}
+        }
+      }
+      div.form-actions{
+        margin-left: $page_width*1/3;
+      }
+    }
+  }
+  
+
+//Catalog
+  div.artwork{
+    padding: 5px 10px 10px 10px;
+    margin: 5px 10px 10px 10px;
+    width: 258px;
+    height: 300px;
+    font-size: $font_size - 2px; line-height: $font_size+4px;;
+    color: #FFF;
+    float: left;
+    display: block;
+    div.imgbox{
+      text-align:center; width:258px; margin-bottom:20px;
+      img{max-height: 200px; max-width:258px; display: inline; border: none; border: 4px #000 solid;}
+    }
+  }
+  span.title{display: block; font-size: $font_size - 1px; text-align: center; font-weight: bold;}
+  span.subtitle{display: block; font-size: $font_size - 3px; text-align: center;}
+  span.details{font-style: italic; display: block; font-size: $font_size - 3px; text-align: center;}
+  span.nobreak{display: inline; margin-right: 5px;}
+  
+  //Pagination
+  nav.pagination{
+    color: #DDD; font-size: $font_size - 2px; line-height: $font_size + 4px; text-align: center;
+    padding: 5px 10px; margin: 10px auto 5px auto; display: block;
+    span{@include box-shadow(inset 1px 1px 1px #111);}
+    .first, .prev, .page, .next, .last{
+      background-color: $blackstone;
+      width: 5em; height: 3em; padding: 0em; vertical-align: middle; display: inline-block;
+      @include border-radius (5px);      
+      a{
+        width: 3.5em; height: 1.5em; display: inline-block; padding: 0.75em;
+        &:hover{text-decoration: none; background-color: lighten($blackstone, 20%); @include border-radius (5px);}
+      }
+    }
+    .page{width: 3em; a{width: 1.5em;}}
+    .current{width: 1.5em; height: 1.5em; display: inline-block; padding: 0.75em; background-color: #4A4A4C;}
+    .gap{width: 1.5em; height: 1.5em; display: inline-block; padding: 0.75em;}
+  }
+  
+//Filters
+  /* Gallery search and filter */
+  #filter_blackout{
+    z-index: 895;
+    position: fixed; top: 0px; left: 0px; height: 100%; width: 100%;
+    background-color: $black; opacity: 0.5; display: none;
+  }
+  
+  #gallery_form{
+    position: fixed; top: 52px; left: 0px; width: auto; height: 100%; z-index: 905; display: none;
+    line-height: $font_size; font-size: $font_size - 2px;
+    background-color: $pewter; border-right: 1px solid $pewter;
+    @include box-shadow(1px 3px 5px $shadow_color);
+    
+    .filter_line{
+      padding: 0em; width: $filters_width;
+      ul{list-style: none; margin: 0px; padding: 0px;}
+      li{
+        margin: 0px; padding: 0px;
+        ul{list-style: none; margin: 0px; padding: 0px;}
+        a{
+          display: block; text-decoration: none; padding: 0.5em 0.5em 0.5em 0.75em;
+          background-position: right center; background-repeat: no-repeat;
+          &:hover{background-color: lighten($pewter, 20%); text-decoration: none;}
+        }
+        .header{font-size: $font_size; padding: 0.5em 0.5em 0.5em 0.5em; background-color: $blackstone; color: $link_color;}
+        .inset{@include box-shadow(inset 0px 1px 1px $shadow_color);}
+        &.highlight a{font-weight: bold; background-color: lighten($pewter, 20%);}
+      }
+    }
+    
+    
+    a.desc{background-image: url('chevrondown.png');}
+    a.asc{background-image: url('chevronup.png');}
+  }
+

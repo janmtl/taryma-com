@@ -1,14 +1,72 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+  
+  resources :artworks do
+    member {get :view}
+    collection {get :browse, :recent}
+  end
+  resources :techniques do
+    member {
+      get :view
+      get :browse
+    }
+  end
+  resources :categories do
+    member {
+      get :view
+      get :browse
+    }
+  end
+  
+  resources :studies do
+    member {get :view}
+  end
+  
+  resources :menu_items do
+    collection {get :browse}
+  end
+  
+  resources :pages do
+    member {get :view}
+  end
+  get "/p/:slug" => "pages#view"  
+  
+  resources :images do
+    member {get :view}
+  end
+  
+  resources :messages do
+    member {
+      put "mark_read" => "messages#mark_read"
+      put "mark_unread" => "messages#mark_unread"
+    }
+  end
+  
+  
+  resources :slides do
+    collection {
+        post :sort
+        get :browse
+    }
+  end
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  get "home/index"
+  get "home/regenerate"
+  get "home/report"
+  get "home/export"
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  get "contact" => "messages#new", :as => "contact"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+  resources :sessions
+  get "admin" => "home#index", :as => "home"
+  get "intro" => "slides#browse"
+  root :to => "slides#browse"
+  
+  
+  #fix compass-twitter-bootstrap img routing problems
+  get "/img/:filename.:filetype" => redirect("/assets/%{filename}.%{filetype}")
 end

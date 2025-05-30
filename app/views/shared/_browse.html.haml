@@ -1,0 +1,19 @@
+= paginate @artworks
+.float-clear
+
+%p#notice= notice
+
+- @artworks.each do |artwork|
+  .artwork
+    .imgbox
+      = link_to image_tag(artwork.filename_url(:browsing)), {:controller => "artworks", :action => "view", :id => artwork.id}, {:rel => "nofollow fancybox", :data => {:fancybox => artwork.filename_url, :title => "#{artwork.title} | #{artwork.technique.name}, #{artwork.category.name} | #{artwork.date_created.strftime("%Y")}, Cat. No. #{artwork.catno}, #{artwork.xcm or '-'}x#{artwork.ycm or '-'}cm (#{artwork.xinch or '-'}x#{artwork.yinch or '-'}&quot;)".html_safe}} if artwork.filename?
+    %p
+      %span.title= link_to artwork.title, {:controller => "artworks", :action => "view", :id => artwork.id}, {:rel => "nofollow"}
+      %span.subtitle
+        = "#{artwork.technique.name}, #{artwork.category.name}"
+      %span.details
+        = "#{artwork.date_created.strftime("%Y")}, Cat. No. #{artwork.catno}, #{artwork.xcm or '-'}x#{artwork.ycm or '-'}cm (#{artwork.xinch or '-'}x#{artwork.yinch or '-'}&quot;)".html_safe
+
+.float-clear
+= paginate @artworks
+.float-clear

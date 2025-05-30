@@ -1,0 +1,11 @@
+%h1 Images
+%table.dataTable.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Filename
+  %tbody
+    - @images.each do |image|
+      %tr
+        %td= link_to (image.filename.blank? ? "none" : image.filename), image
+= link_to "New Image", new_image_path, {:class => 'btn btn-primary big'}
+    

@@ -1,0 +1,23 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass_twitter_bootstrap";
+
+body { 
+  padding: 60px 0px;
+}
+
+// fix flash classes from rails to bootstrap
+.alert-notice{
+  @extend .alert-success
+}
+.alert-warning{
+  @extend .alert-error
+}
+#loginform{
+  .form-inputs{ padding: 1em; }
+  .form-actions{ margin-bottom: 0px; }
+  form{ margin-bottom: 0px; }
+  border: 3px solid $formActionsBackground;
+  @include border-radius(10px);
+}
