@@ -2,10 +2,9 @@
  * application.css
  *
  *= require_self
- *= require fancybox
 */
 
-@import "compass/css3";
+@import "bootstrap";
 
 //Colors
 $blackstone: #2A2A2C;
@@ -89,11 +88,11 @@ $navheight: 52px;
     a{
       padding: 20px; display: block;
       background-color: $blackstone; color: $text_color;
-      @include box-shadow(inset 1px 1px 1px lighten($shadow_color, 10%));
+      // @include box-shadow(inset 1px 1px 1px lighten($shadow_color, 10%));
       @include border-radius(5px);
       &:hover{
         background-color: lighten($blackstone, 10%); color: $text_color;
-        @include box-shadow(inset 0px 0px 0px lighten($shadow_color, 10%));
+        // @include box-shadow(inset 0px 0px 0px lighten($shadow_color, 10%));
       }
     }
   }
@@ -125,7 +124,7 @@ $navheight: 52px;
     padding: 0px;
     z-index: +1; position: fixed;
     line-height: 11px;
-    @include box-shadow($shadow_color 1px 0px $shadow_spread);
+    // @include box-shadow($shadow_color 1px 0px $shadow_spread);
     
     //'Dots' for studies
     ul.studies{
@@ -280,7 +279,7 @@ $navheight: 52px;
   nav.pagination{
     color: #DDD; font-size: $font_size - 2px; line-height: $font_size + 4px; text-align: center;
     padding: 5px 10px; margin: 10px auto 5px auto; display: block;
-    span{@include box-shadow(inset 1px 1px 1px #111);}
+    // span{@include box-shadow(inset 1px 1px 1px #111);}
     .first, .prev, .page, .next, .last{
       background-color: $blackstone;
       width: 5em; height: 3em; padding: 0em; vertical-align: middle; display: inline-block;
@@ -307,7 +306,7 @@ $navheight: 52px;
     position: fixed; top: 52px; left: 0px; width: auto; height: 100%; z-index: 905; display: none;
     line-height: $font_size; font-size: $font_size - 2px;
     background-color: $pewter; border-right: 1px solid $pewter;
-    @include box-shadow(1px 3px 5px $shadow_color);
+    // @include box-shadow(1px 3px 5px $shadow_color);
     
     .filter_line{
       padding: 0em; width: $filters_width;
@@ -321,7 +320,7 @@ $navheight: 52px;
           &:hover{background-color: lighten($pewter, 20%); text-decoration: none;}
         }
         .header{font-size: $font_size; padding: 0.5em 0.5em 0.5em 0.5em; background-color: $blackstone; color: $link_color;}
-        .inset{@include box-shadow(inset 0px 1px 1px $shadow_color);}
+        // .inset{@include box-shadow(inset 0px 1px 1px $shadow_color);}
         &.highlight a{font-weight: bold; background-color: lighten($pewter, 20%);}
       }
     }

@@ -1,7 +1,7 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "compass_twitter_bootstrap";
+@import "bootstrap";
 
 body { 
   padding: 60px 0px;
@@ -12,12 +12,12 @@ body {
   @extend .alert-success
 }
 .alert-warning{
-  @extend .alert-error
+  @extend .alert-danger
 }
 #loginform{
   .form-inputs{ padding: 1em; }
   .form-actions{ margin-bottom: 0px; }
   form{ margin-bottom: 0px; }
-  border: 3px solid $formActionsBackground;
+  border: 3px solid #f5f5f5;
   @include border-radius(10px);
 }

@@ -12,18 +12,18 @@
  *= require dataTables/jquery.dataTables.bootstrap
 */
 
-@import "compass_twitter_bootstrap";
+@import "bootstrap";
 
 body { 
   padding: 60px 0px;
 }
 
 .dataTable .title{
-  font-size: $baseFontSize * 1.25;
-  line-height: $baseLineHeight * 1.25;
+  font-size: 15px;
+  line-height: 18px;
 }
 .dataTable .subtitle{
-  color: $grayLight;
+  color: $gray-300;
 }
 
 // fix flash classes from rails to bootstrap
@@ -31,20 +31,20 @@ body {
   @extend .alert-success
 }
 .alert-warning{
-  @extend .alert-error
+  @extend .alert-danger
 }
 
 //Nested Forms
   .attachments{
     overflow-y: scroll; max-height: 200px;
     margin: 10px -19px;
-    background-color: $grayLighter;
-    border-width: 1px 0px 1px 0px; border-color: $white; border-style: solid; @include box-shadow($grayLight -3px 0px 3px inset);
+    background-color: $gray-200;
+    border-width: 1px 0px 1px 0px; border-color: $white; border-style: solid;
     .attachment{
       margin: 10px; padding: 10px;
       float: left; width: 100px; height: 100px;
       background-color: $white; background-size: cover; background-repeat: no-repeat; background-position: center center;
-      @include border-radius(5px); border: 1px solid $grayLight; @include box-shadow($grayLight 1px 1px 1px);
+      @include border-radius(5px); border: 1px solid $gray-300;
     }
   }
 
@@ -61,7 +61,7 @@ body {
       margin:0px 10px 10px 0px; padding: 10px;
       list-style: none;
       width: 135px; height: 200px;
-      background-color: $grayLighter;
+      background-color: $gray-200;
       text-align: center;
       .imgbox{
         vertical-align: middle; display: table-cell;
@@ -71,7 +71,7 @@ body {
         display: block;
         width: 125px;
         padding: 5px; margin: 0px;
-        background-color: $grayLighter;
+        background-color: $gray-200;
       }
     }
   }
@@ -82,7 +82,7 @@ body {
     list-style: none; margin: 0px;
     li{
       @include border-radius(5px);
-      border: 1px solid $grayLighter;
+      border: 1px solid $gray-200;
       padding: 5px; margin: 5px;
       cursor: move;
       line-height: 3em;

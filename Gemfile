@@ -43,10 +43,14 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Remove outdated asset pipeline gems and replace with modern equivalents
-gem "sassc-rails" # Replace sass-rails with sassc-rails
+# gem "sassc-rails" # Replace sass-rails with sassc-rails
+gem "dartsass-sprockets"
 gem "esbuild-rails" # Modern JavaScript bundling
 gem "cssbundling-rails" # Modern CSS bundling
-gem 'compass_twitter_bootstrap', :github => 'vwall/compass-twitter-bootstrap'
+# gem 'compass_twitter_bootstrap', :github => 'vwall/compass-twitter-bootstrap'
+gem 'bootstrap', '~> 5.3.3'
+gem 'coffee-rails'
+gem 'jquery-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
