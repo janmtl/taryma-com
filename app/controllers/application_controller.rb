@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
+  helper_method :permitted_params
+  
   protect_from_forgery
 
   layout :layout_by_login
 
   private
+
+  def logged_in?
+    session[:user_id].present?
+  end
 
   def not_authenticated
     redirect_to login_url, alert: "First log in to view this page."
@@ -19,5 +25,9 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
+  end
+
+  def permitted_params
+    params.permit(:sort, :direction, :page)
   end
 end

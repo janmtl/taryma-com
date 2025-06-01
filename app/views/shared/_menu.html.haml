@@ -7,7 +7,7 @@
           = (@filter_title || 'Filter &amp; Sort').html_safe
           %span.menusubtitle
             = @filter_title.blank? ? 'by Technique or Category' : 'click for more options'.html_safe
-  - @menu_items = MenuItem.find(:all, :order => :position)
+  - @menu_items = MenuItem.order(:position)
   %ul.pages
     - @menu_items.each do |menu_item|
       %li{:class => ( Regexp.new('^'+Regexp.escape(menu_item.path)).match(request.path) ? 'selected' : '')}= link_to menu_item.label, menu_item.path, {:alt => menu_item.label}

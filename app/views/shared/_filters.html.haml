@@ -17,12 +17,12 @@
         %li
           .header.inset Categories
           %ul
-            - Category.find(:all, :conditions => "id <> 0", :order => :position).each do |category|
-              %li{:class => ((controller.controller_name == "categories" && category.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (category.name + " (" + category.artworks.count(:all).to_s + ")"), :action => "browse", :controller => "categories", :id => category.id
+            - Category.where.not(id: 0).order(:position).each do |category|
+              %li{:class => ((controller.controller_name == "categories" && category.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (category.name + " (" + category.artworks.count.to_s + ")"), :action => "browse", :controller => "categories", :id => category.id
       %ul.techniques
         %li
           .header.inset Techniques
           %ul
-            - Technique.find(:all, :conditions => "id <> 0", :order => :position).each do |technique|
-              %li{:class => ((controller.controller_name == "techniques" && technique.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (technique.name + " (" + technique.artworks.count(:all).to_s + ")"), :action => "browse", :controller => "techniques", :id => technique.id
+            - Technique.where.not(id: 0).order(:position).each do |technique|
+              %li{:class => ((controller.controller_name == "techniques" && technique.id.to_s == params[:id].to_s) ? 'no-highlight' : '')}= link_to (technique.name + " (" + technique.artworks.count.to_s + ")"), :action => "browse", :controller => "techniques", :id => technique.id
   .float-clear

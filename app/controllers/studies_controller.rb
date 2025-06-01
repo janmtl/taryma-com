@@ -55,7 +55,8 @@ class StudiesController < ApplicationController
   #application actions
   
   def view
-    @study = Study.find(params[:id], :order => :position)
+    # @study = Study.find(params[:id], :order => :position)
+    @study = Study.find(params[:id])
     @base_path = 'studies/'+@study.id.to_s+'/view'
     @all_studies = Study.select(:id).order(:position).map{|c| c.id}
    

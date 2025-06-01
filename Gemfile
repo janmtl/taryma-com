@@ -51,6 +51,10 @@ gem "cssbundling-rails" # Modern CSS bundling
 gem 'bootstrap', '~> 5.3.3'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 3.0'
+gem 'rmagick'
+gem 'simple_form'
+gem 'kaminari'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

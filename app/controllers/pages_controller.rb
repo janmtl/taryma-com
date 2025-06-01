@@ -50,7 +50,8 @@ class PagesController < ApplicationController
   def view
     @page = Page.find(params[:id]) if params[:id]
     @page = Page.find_by_slug(params[:slug]) if params[:slug]
-    @base_path = 'p/'+@page.slug
+    Rails.logger.debug "Page: #{@page.inspect}"
+    @base_path = 'p/' + @page.slug
   end
 
   private

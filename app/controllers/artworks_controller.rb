@@ -5,15 +5,16 @@ class ArtworksController < ApplicationController
   #admin actions
   
   def index
+    permitted_params = params.permit(:query)
     respond_to do |format|
       format.html { @artworks = Artwork.find(:all) }
       format.json {
-        if params[:query]
-          @artworks = Artwork.order(:title).where("title like ?", "%#{params[:query]}%")
+        if permitted_params[:query]
+          @artworks = Artwork.order(:title).where("title like ?", "%#{permitted_params[:query]}%")
         else
           @artworks = Artwork.order(:title)
         end
-        render :json => @artworks.map{|artwork| {:id => artwork.id, :name => artwork.title, :filename => artwork.filename_url(:modal).to_s}}
+        render json: @artworks.map{|artwork| {:id => artwork.id, :name => artwork.title, :filename => artwork.filename_url(:modal).to_s}}
       }
     end
   end
@@ -60,6 +61,8 @@ class ArtworksController < ApplicationController
   def browse
     @artworks = Artwork.order(sort_column + " " + sort_direction).page(params[:page]).per(60)
     @base_path = 'artworks/browse'
+    permitted_params = params.permit(:sort, :direction, :page)
+    Rails.logger.debug "Permitted Params: #{permitted_params.inspect}"
     @filters = true
   end
 
@@ -67,6 +70,8 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.order("catno DESC").is_recent.page(params[:page]).per(120)
     #@artworks = Artwork.find(:all, :order=>"catno DESC", :conditions => [ "recent = ?", 1]).page(params[:page]).per(60)
     @base_path = 'artworks/recent'
+    permitted_params = params.permit(:sort, :direction)
+    # Use `permitted_params` instead of `params` in your logic
     render 'browse'
   end
 
@@ -94,6 +99,10 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:catno, :date_created, :filename, :recent, :title, :xcm, :xinch, :ycm, :yinch, :technique_id, :category_id, :recent)
+    params.require(:artwork).permit(:catno, :date_created, :filename, :recent, :title, :xcm, :xinch, :ycm, :yinch, :technique_id, :category_id, :recent, :sort, :direction, :page)
+  end
+
+  def permitted_params
+    params.permit(:sort, :direction, :page)
   end
 end

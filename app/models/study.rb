@@ -1,5 +1,5 @@
 class Study < ActiveRecord::Base
-  attr_accessible :description, :name, :position, :attachments_attributes, :image_attachments_attributes
+  # attr_accessible :description, :name, :position, :attachments_attributes, :image_attachments_attributes
   
   has_many :attachments, dependent: :destroy
   has_many :artworks, through: :attachments
