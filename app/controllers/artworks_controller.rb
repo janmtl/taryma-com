@@ -7,7 +7,7 @@ class ArtworksController < ApplicationController
   def index
     permitted_params = params.permit(:query)
     respond_to do |format|
-      format.html { @artworks = Artwork.find(:all) }
+      format.html { @artworks = Artwork.all }
       format.json {
         if permitted_params[:query]
           @artworks = Artwork.order(:title).where("title like ?", "%#{permitted_params[:query]}%")

@@ -61,7 +61,7 @@ Rails.application.routes.draw do
   # get "logout" => "sessions#destroy", :as => "logout" # Replaced by Devise
   # get "login" => "sessions#new", :as => "login" # Replaced by Devise
   # get "signup" => "users#new", :as => "signup" # Replaced by Devise
-  # resources :users # Replaced by Devise
+  resources :users # Replaced by Devise
   # resources :sessions # Replaced by Devise
   get "admin" => "home#index", :as => "home"
   get "intro" => "slides#browse"

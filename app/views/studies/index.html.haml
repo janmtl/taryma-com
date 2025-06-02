@@ -11,5 +11,5 @@
         %td= link_to (study.name.blank? ? "none" : study.name), study
         %td= study.position
         - count = (study.artworks.nil? ? 0 : study.artworks.count) + (study.images.nil? ? 0 : study.images.count)
-        %td= (count > 0) ? "none" : count.to_s
+        %td= (count > 0) ? count.to_s : "none"
 = link_to "New Study", new_study_path, {:class => 'btn btn-primary big'}

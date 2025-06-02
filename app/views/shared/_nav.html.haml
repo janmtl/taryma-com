@@ -1,36 +1,54 @@
-.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a{:href => home_index_path}
-        %span.brand Admin Panel
-      %ul.nav
-        %li= link_to "Home", home_index_path
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    %a.navbar-brand{:href => home_index_path} Admin Panel
+    %button.navbar-toggler{"aria-controls" => "navbarNavContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavContent", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    %div.collapse.navbar-collapse#navbarNavContent
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          = link_to "Home", home_index_path, :class => "nav-link #{'active' if current_page?(home_index_path)}"
 
-        %li.dropdown
-          = link_to "Edit<b class='caret'></b>".html_safe, '#', {:class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}}
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{:href => "#", :role => "button", "data-bs-toggle" => "dropdown", "aria-expanded" => "false"}
+            Edit
           %ul.dropdown-menu
-            %li.nav-header Sections
-            %li= link_to "Studies", studies_path
-            %li= link_to "Catalog", artworks_path
-            %li= link_to "Pages", pages_path
-            %li.divider
-            %li.nav-header Organization
-            %li= link_to "Categories", categories_path
-            %li= link_to "Techniques", techniques_path
-            %li= link_to "Images", images_path
-            %li= link_to "Menu", menu_items_path
+            %li
+              %h6.dropdown-header Sections
+            %li
+              = link_to "Studies", studies_path, :class => "dropdown-item"
+            %li
+              = link_to "Catalog", artworks_path, :class => "dropdown-item"
+            %li
+              = link_to "Pages", pages_path, :class => "dropdown-item"
+            %li
+              %hr.dropdown-divider
+            %li
+              %h6.dropdown-header Organization
+            %li
+              = link_to "Categories", categories_path, :class => "dropdown-item"
+            %li
+              = link_to "Techniques", techniques_path, :class => "dropdown-item"
+            %li
+              = link_to "Images", images_path, :class => "dropdown-item"
+            %li
+              = link_to "Menu", menu_items_path, :class => "dropdown-item"
 
-        %li.dropdown
-          = link_to "Tools<b class='caret'></b>".html_safe, '#', {:class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}}
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{:href => "#", :role => "button", "data-bs-toggle" => "dropdown", "aria-expanded" => "false"}
+            Tools
           %ul.dropdown-menu
-            %li= link_to "View messages", messages_path
-            %li= link_to "Intro slideshow", slides_path
-            %li= link_to "Regenerate all thumbnails", home_regenerate_path
-            %li= link_to "Users", users_path
+            %li
+              = link_to "View messages", messages_path, :class => "dropdown-item"
+            %li
+              = link_to "Intro slideshow", slides_path, :class => "dropdown-item"
+            %li
+              = link_to "Regenerate all thumbnails", home_regenerate_path, :class => "dropdown-item"
+            %li
+              = link_to "Users", users_path, :class => "dropdown-item"
 
-      %ul.nav.pull-right
-        %li
+      %ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+        %li.nav-item
           - if current_user
-            = link_to "Log out", logout_path
+            = link_to "Log out", destroy_user_session_path, method: :delete, :class => "nav-link"
           - else
-            = link_to "Log in", login_path
+            = link_to "Log in", login_path, :class => "nav-link"

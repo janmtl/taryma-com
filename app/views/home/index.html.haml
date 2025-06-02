@@ -18,7 +18,5 @@
       = link_to "Manage pages", pages_path, {:class => 'btn btn-primary'}
 
 .well
-  %h3 Changelog
-  %pre= (render :file => 'public/changelog.txt').gsub(/\n/, '<br/>'.html_safe).html_safe
   %h3 Status
   %pre= Rails.env

@@ -4,7 +4,7 @@ class StudiesController < ApplicationController
   #admin actions
   
   def index
-    if logged_in?
+    if user_signed_in?
       @studies = Study.all
     else
       redirect_to action: 'view', id: Study.order(:position).first.id
