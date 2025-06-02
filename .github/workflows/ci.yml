@@ -10,16 +10,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Install ImageMagick
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick libmagickwand-dev
+
     - name: Set up Ruby (if it's a Ruby project)
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.2' # Specify your Ruby version
         bundler-cache: true # Runs bundle install and caches gems
-
-    - name: Install ImageMagick
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y imagemagick libmagickwand-dev
 
     # Add your project-specific steps here
     # For example, for a Rails app:
