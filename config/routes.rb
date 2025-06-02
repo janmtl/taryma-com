@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   get "up" => "rails/health#show", as: :rails_health_check
   
@@ -57,11 +58,11 @@ Rails.application.routes.draw do
   get "home/export"
 
   get "contact" => "messages#new", :as => "contact"
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "login" => "sessions#new", :as => "login"
-  get "signup" => "users#new", :as => "signup"
-  resources :users
-  resources :sessions
+  # get "logout" => "sessions#destroy", :as => "logout" # Replaced by Devise
+  # get "login" => "sessions#new", :as => "login" # Replaced by Devise
+  # get "signup" => "users#new", :as => "signup" # Replaced by Devise
+  # resources :users # Replaced by Devise
+  # resources :sessions # Replaced by Devise
   get "admin" => "home#index", :as => "home"
   get "intro" => "slides#browse"
   root :to => "slides#browse"

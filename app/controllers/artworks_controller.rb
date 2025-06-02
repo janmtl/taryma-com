@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :require_login, except: [:browse, :recent, :view]
+  before_action :authenticate_user!, except: [:browse, :recent, :view]
   helper_method :sort_column, :sort_direction
   
   #admin actions

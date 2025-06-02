@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :require_login, except: [:browse]
+  before_action :authenticate_user!, except: [:browse]
   helper_method :sort_column, :sort_direction
   
   #admin actions

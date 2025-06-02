@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :require_login
+  before_action :authenticate_user!
 
   def index
     @studies_count = Study.count

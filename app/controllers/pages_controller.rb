@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :require_login, except: [:view]
+  before_action :authenticate_user!, except: [:view]
   
   #admin actions
   

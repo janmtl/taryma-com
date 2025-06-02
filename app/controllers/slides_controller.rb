@@ -1,5 +1,5 @@
 class SlidesController < ApplicationController
-  before_action :require_login, except: [:browse]
+  before_action :authenticate_user!, except: [:browse]
   
   #admin actions
   

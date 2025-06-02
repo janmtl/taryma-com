@@ -1,5 +1,5 @@
 class StudiesController < ApplicationController
-  before_action :require_login, except: [:index, :view]
+  before_action :authenticate_user!, except: [:index, :view]
   
   #admin actions
   
