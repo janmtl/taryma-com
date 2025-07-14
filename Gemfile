@@ -47,7 +47,7 @@ gem "thruster", require: false
 # gem "sassc-rails" # Replace sass-rails with sassc-rails
 gem "dartsass-sprockets"
 gem "esbuild-rails" # Modern JavaScript bundling
-gem "cssbundling-rails" # Modern CSS bundling
+# gem "cssbundling-rails" # Modern CSS bundling
 # gem 'compass_twitter_bootstrap', :github => 'vwall/compass-twitter-bootstrap'
 gem 'bootstrap', '~> 5.3.3'
 gem 'coffee-rails'
