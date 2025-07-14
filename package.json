@@ -1,0 +1,12 @@
+{
+  "name": "taryma-com",
+  "private": true,
+  "dependencies": {
+    "esbuild": "^0.23.0",
+    "sass": "^1.77.8"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "sass app/assets/stylesheets/application.css.scss:app/assets/builds/application.css"
+  }
+}
