@@ -19,8 +19,11 @@ docker build -t taryma_com .
 Execute the following command to start the application. You must replace <value from config/master.key> with your actual RAILS_MASTER_KEY.
 
 ````
-docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name taryma_com taryma_com
-```
+docker run -d -p 80:80 \
+  -e RAILS_MASTER_KEY=<value from config/master.key> \
+  -v "$(pwd)/storage":/rails/storage \
+  --name taryma_com taryma_com
+````
 * `-d`: Runs the container in detached mode.
 * `-p 80:80`: Maps port 80 on the host to port 80 in the container.
 * `-e RAILS_MASTER_KEY=...`: Securely provides the master key as an environment variable.
