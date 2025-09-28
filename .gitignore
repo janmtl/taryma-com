@@ -38,3 +38,4 @@
 /db/*.sqlite3
 /public/gallery
 /public/uploads
+/config/credentials/production.key

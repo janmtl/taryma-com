@@ -43,6 +43,9 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# AWS SDK for S3-compatible storage (Hetzner Object Storage)
+gem "aws-sdk-s3", require: false
+
 # Remove outdated asset pipeline gems and replace with modern equivalents
 # gem "sassc-rails" # Replace sass-rails with sassc-rails
 gem "dartsass-sprockets"
