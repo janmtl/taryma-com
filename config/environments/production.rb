@@ -84,9 +84,7 @@ Rails.application.configure do
 
   # Set secret_key_base for production
   # Use environment variable or fallback to credentials
-  config.secret_key_base = ENV.fetch("SECRET_KEY_BASE") do
-    Rails.application.credentials.secret_key_base
-  end
+  config.secret_key_base = ENV.fetch("SECRET_KEY_BASE")
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
