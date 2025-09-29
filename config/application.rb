@@ -23,5 +23,8 @@ module TarymaCom
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Configure secret_key_base from credentials
+    config.secret_key_base = Rails.application.credentials.secret_key_base
   end
 end
