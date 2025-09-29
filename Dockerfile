@@ -15,8 +15,8 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 ARG RAILS_MASTER_KEY
 ARG SECRET_KEY_BASE
 
-RUN sh 'echo "${RAILS_MASTER_KEY}"'
-RUN sh 'echo "${SECRET_KEY_BASE}"'
+RUN echo "${RAILS_MASTER_KEY}"
+RUN echo "${SECRET_KEY_BASE}"
 
 # Rails app lives here
 WORKDIR /rails
