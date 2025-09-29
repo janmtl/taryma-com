@@ -197,8 +197,8 @@ namespace :assets do
     puts "🚀 Starting full asset deployment to Hetzner Object Storage..."
     
     # Setup CORS configuration
-    puts "🔧 Setting up CORS configuration..."
-    Rake::Task['cors:setup'].invoke
+    # puts "🔧 Setting up CORS configuration..."
+    # Rake::Task['cors:setup'].invoke
     
     # Precompile assets
     puts "📦 Precompiling assets..."
