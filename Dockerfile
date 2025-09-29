@@ -11,6 +11,10 @@
 ARG RUBY_VERSION=3.4.4
 ARG RAILS_MASTER_KEY
 ARG SECRET_KEY_BASE
+
+RUN sh 'echo "${RAILS_MASTER_KEY}"'
+RUN sh 'echo "${SECRET_KEY_BASE}"'
+
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
