@@ -7,13 +7,13 @@ namespace :assets do
     # Configure S3 client for Hetzner
     s3_client = Aws::S3::Client.new(
       endpoint: 'https://hel1.your-objectstorage.com',
-      access_key_id: Rails.application.credentials.dig(:hetzner, :access_key_id),
-      secret_access_key: Rails.application.credentials.dig(:hetzner, :secret_access_key),
+      access_key_id: ENV['HETZNER_ACCESS_KEY_ID'] || Rails.application.credentials.dig(:hetzner, :access_key_id),
+      secret_access_key: ENV['HETZNER_SECRET_ACCESS_KEY'] || Rails.application.credentials.dig(:hetzner, :secret_access_key),
       region: 'hel1',
       force_path_style: true
     )
     
-    bucket = 'taryma-com'
+    bucket = 'taryma-com-public'
     public_dir = Rails.root.join('public')
     
     puts "🚀 Starting upload of static assets to Hetzner Object Storage..."
@@ -58,7 +58,10 @@ namespace :assets do
           key: relative_path,
           body: File.read(path),
           content_type: content_type,
-          cache_control: 'public, max-age=31536000' # 1 year cache
+          cache_control: 'public, max-age=31536000', # 1 year cache
+          metadata: {
+            'Access-Control-Allow-Origin' => '*'
+          }
         )
         
         puts "✅ Uploaded: #{relative_path}"
@@ -79,13 +82,13 @@ namespace :assets do
     # Configure S3 client for Hetzner
     s3_client = Aws::S3::Client.new(
       endpoint: 'https://hel1.your-objectstorage.com',
-      access_key_id: Rails.application.credentials.dig(:hetzner, :access_key_id),
-      secret_access_key: Rails.application.credentials.dig(:hetzner, :secret_access_key),
+      access_key_id: ENV['HETZNER_ACCESS_KEY_ID'] || Rails.application.credentials.dig(:hetzner, :access_key_id),
+      secret_access_key: ENV['HETZNER_SECRET_ACCESS_KEY'] || Rails.application.credentials.dig(:hetzner, :secret_access_key),
       region: 'hel1',
       force_path_style: true
     )
     
-    bucket = 'taryma-com'
+    bucket = 'taryma-com-public'
     assets_dir = Rails.root.join('public', 'assets')
     
     unless Dir.exist?(assets_dir)
@@ -126,7 +129,10 @@ namespace :assets do
           key: relative_path,
           body: File.read(path),
           content_type: content_type,
-          cache_control: 'public, max-age=31536000' # 1 year cache
+          cache_control: 'public, max-age=31536000', # 1 year cache
+          metadata: {
+            'Access-Control-Allow-Origin' => '*'
+          }
         )
         
         puts "✅ Uploaded compiled asset: #{relative_path}"
@@ -146,13 +152,13 @@ namespace :assets do
     # Configure S3 client for Hetzner
     s3_client = Aws::S3::Client.new(
       endpoint: 'https://hel1.your-objectstorage.com',
-      access_key_id: Rails.application.credentials.dig(:hetzner, :access_key_id),
-      secret_access_key: Rails.application.credentials.dig(:hetzner, :secret_access_key),
+      access_key_id: ENV['HETZNER_ACCESS_KEY_ID'] || Rails.application.credentials.dig(:hetzner, :access_key_id),
+      secret_access_key: ENV['HETZNER_SECRET_ACCESS_KEY'] || Rails.application.credentials.dig(:hetzner, :secret_access_key),
       region: 'hel1',
       force_path_style: true
     )
     
-    bucket = 'taryma-com'
+    bucket = 'taryma-com-public'
     
     puts "🧹 Cleaning up old assets from Hetzner Object Storage..."
     
@@ -189,6 +195,10 @@ namespace :assets do
   desc "Full asset deployment: precompile and upload to Hetzner"
   task deploy_to_hetzner: :environment do
     puts "🚀 Starting full asset deployment to Hetzner Object Storage..."
+    
+    # Setup CORS configuration
+    puts "🔧 Setting up CORS configuration..."
+    Rake::Task['cors:setup'].invoke
     
     # Precompile assets
     puts "📦 Precompiling assets..."

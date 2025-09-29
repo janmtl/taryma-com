@@ -1,0 +1,12 @@
+<CORSConfiguration>
+  <CORSRule>
+    <AllowedHeader>*</AllowedHeader>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <AllowedOrigin>https://taryma.com</AllowedOrigin>
+    <AllowedOrigin>https://www.taryma.com</AllowedOrigin>
+    <AllowedOrigin>https://www.example.com</AllowedOrigin>
+    <AllowedOrigin>http://localhost:3000</AllowedOrigin>
+    <AllowedOrigin>http://127.0.0.1:3000</AllowedOrigin>
+  </CORSRule>
+</CORSConfiguration>

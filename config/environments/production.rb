@@ -19,7 +19,10 @@ Rails.application.configure do
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
 
   # Enable serving of images, stylesheets, and JavaScripts from Hetzner Object Storage.
-  config.asset_host = "https://taryma-com.hel1.your-objectstorage.com/public"
+  config.asset_host = "https://taryma-com-public.hel1.your-objectstorage.com"
+  
+  # Disable asset digest (hash) in filenames
+  config.assets.digest = false
 
   # Store uploaded files on Hetzner S3 (see config/storage.yml for options).
   config.active_storage.service = :hetzner
