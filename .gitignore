@@ -6,7 +6,7 @@ images-browse/
 taryma-com-media.zip
 
 # Hugo build output
-public/
+# public/ # Allow public folder to be committed for the statichost.eu builder
 resources/
 .hugo_build.lock
 
