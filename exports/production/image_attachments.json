@@ -1,0 +1,202 @@
+[
+  {
+    "id": 2,
+    "image_id": 13,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.101234",
+    "updated_at": "2012-07-16 02:55:50.101234"
+  },
+  {
+    "id": 3,
+    "image_id": 12,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.101914",
+    "updated_at": "2012-07-16 02:55:50.101914"
+  },
+  {
+    "id": 4,
+    "image_id": 14,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.102409",
+    "updated_at": "2012-07-16 02:55:50.102409"
+  },
+  {
+    "id": 5,
+    "image_id": 15,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.102894",
+    "updated_at": "2012-07-16 02:55:50.102894"
+  },
+  {
+    "id": 6,
+    "image_id": 17,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.103385",
+    "updated_at": "2012-07-16 02:55:50.103385"
+  },
+  {
+    "id": 7,
+    "image_id": 18,
+    "study_id": 20,
+    "position": null,
+    "created_at": "2012-07-16 02:55:50.103869",
+    "updated_at": "2012-07-16 02:55:50.103869"
+  },
+  {
+    "id": 8,
+    "image_id": 19,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-16 03:04:04.981145",
+    "updated_at": "2012-07-16 03:04:04.981145"
+  },
+  {
+    "id": 9,
+    "image_id": 20,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-16 03:04:04.981833",
+    "updated_at": "2012-07-16 03:04:04.981833"
+  },
+  {
+    "id": 10,
+    "image_id": 21,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-16 03:04:04.982311",
+    "updated_at": "2012-07-16 03:04:04.982311"
+  },
+  {
+    "id": 11,
+    "image_id": 22,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-16 03:04:04.982782",
+    "updated_at": "2012-07-16 03:04:04.982782"
+  },
+  {
+    "id": 12,
+    "image_id": 24,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-16 03:04:04.983255",
+    "updated_at": "2012-07-16 03:04:04.983255"
+  },
+  {
+    "id": 13,
+    "image_id": 25,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 03:05:39.241227",
+    "updated_at": "2012-07-16 03:05:39.241227"
+  },
+  {
+    "id": 14,
+    "image_id": 26,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 03:05:39.241887",
+    "updated_at": "2012-07-16 03:05:39.241887"
+  },
+  {
+    "id": 15,
+    "image_id": 27,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 03:05:39.242365",
+    "updated_at": "2012-07-16 03:05:39.242365"
+  },
+  {
+    "id": 16,
+    "image_id": 28,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 03:06:59.172252",
+    "updated_at": "2012-07-16 03:06:59.172252"
+  },
+  {
+    "id": 17,
+    "image_id": 30,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 03:06:59.172935",
+    "updated_at": "2012-07-16 03:06:59.172935"
+  },
+  {
+    "id": 18,
+    "image_id": 31,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 03:06:59.173443",
+    "updated_at": "2012-07-16 03:06:59.173443"
+  },
+  {
+    "id": 19,
+    "image_id": 32,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.586857",
+    "updated_at": "2012-07-16 03:09:49.586857"
+  },
+  {
+    "id": 20,
+    "image_id": 33,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.587787",
+    "updated_at": "2012-07-16 03:09:49.587787"
+  },
+  {
+    "id": 21,
+    "image_id": 34,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.588535",
+    "updated_at": "2012-07-16 03:09:49.588535"
+  },
+  {
+    "id": 22,
+    "image_id": 35,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.589182",
+    "updated_at": "2012-07-16 03:09:49.589182"
+  },
+  {
+    "id": 23,
+    "image_id": 36,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.589827",
+    "updated_at": "2012-07-16 03:09:49.589827"
+  },
+  {
+    "id": 24,
+    "image_id": 37,
+    "study_id": 23,
+    "position": null,
+    "created_at": "2012-07-16 03:09:49.590473",
+    "updated_at": "2012-07-16 03:09:49.590473"
+  },
+  {
+    "id": 25,
+    "image_id": 38,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 03:10:33.815206",
+    "updated_at": "2012-07-16 03:10:33.815206"
+  },
+  {
+    "id": 26,
+    "image_id": 39,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 03:11:23.782599",
+    "updated_at": "2012-07-16 03:11:23.782599"
+  }
+]

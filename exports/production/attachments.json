@@ -1,0 +1,418 @@
+[
+  {
+    "id": 22,
+    "artwork_id": 1789,
+    "study_id": 6,
+    "position": null,
+    "created_at": "2012-07-14 18:16:22.828895",
+    "updated_at": "2012-07-14 18:16:22.828895"
+  },
+  {
+    "id": 23,
+    "artwork_id": 1790,
+    "study_id": 6,
+    "position": null,
+    "created_at": "2012-07-14 18:16:22.830710",
+    "updated_at": "2012-07-14 18:16:22.830710"
+  },
+  {
+    "id": 24,
+    "artwork_id": 1666,
+    "study_id": 6,
+    "position": null,
+    "created_at": "2012-07-15 16:54:39.638915",
+    "updated_at": "2012-07-15 16:54:39.638915"
+  },
+  {
+    "id": 25,
+    "artwork_id": 1729,
+    "study_id": 6,
+    "position": null,
+    "created_at": "2012-07-15 16:54:39.640006",
+    "updated_at": "2012-07-15 16:54:39.640006"
+  },
+  {
+    "id": 26,
+    "artwork_id": 1822,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.769461",
+    "updated_at": "2012-07-15 20:03:59.769461"
+  },
+  {
+    "id": 27,
+    "artwork_id": 1926,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.770447",
+    "updated_at": "2012-07-15 20:03:59.770447"
+  },
+  {
+    "id": 28,
+    "artwork_id": 1718,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.771338",
+    "updated_at": "2012-07-15 20:03:59.771338"
+  },
+  {
+    "id": 29,
+    "artwork_id": 1920,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.772264",
+    "updated_at": "2012-07-15 20:03:59.772264"
+  },
+  {
+    "id": 30,
+    "artwork_id": 1727,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.773141",
+    "updated_at": "2012-07-15 20:03:59.773141"
+  },
+  {
+    "id": 31,
+    "artwork_id": 1959,
+    "study_id": 17,
+    "position": null,
+    "created_at": "2012-07-15 20:03:59.774028",
+    "updated_at": "2012-07-15 20:03:59.774028"
+  },
+  {
+    "id": 32,
+    "artwork_id": 1847,
+    "study_id": 18,
+    "position": null,
+    "created_at": "2012-07-15 20:10:22.836498",
+    "updated_at": "2012-07-15 20:10:22.836498"
+  },
+  {
+    "id": 33,
+    "artwork_id": 1728,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.568863",
+    "updated_at": "2012-07-16 01:10:49.568863"
+  },
+  {
+    "id": 34,
+    "artwork_id": 1724,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.570398",
+    "updated_at": "2012-07-16 01:10:49.570398"
+  },
+  {
+    "id": 35,
+    "artwork_id": 1719,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.571303",
+    "updated_at": "2012-07-16 01:10:49.571303"
+  },
+  {
+    "id": 36,
+    "artwork_id": 1723,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.572199",
+    "updated_at": "2012-07-16 01:10:49.572199"
+  },
+  {
+    "id": 37,
+    "artwork_id": 1720,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.573396",
+    "updated_at": "2012-07-16 01:10:49.573396"
+  },
+  {
+    "id": 38,
+    "artwork_id": 1842,
+    "study_id": 19,
+    "position": null,
+    "created_at": "2012-07-16 01:10:49.574368",
+    "updated_at": "2012-07-16 01:10:49.574368"
+  },
+  {
+    "id": 39,
+    "artwork_id": 1644,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 01:14:22.228685",
+    "updated_at": "2012-07-16 01:14:22.228685"
+  },
+  {
+    "id": 40,
+    "artwork_id": 1665,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 01:14:22.229675",
+    "updated_at": "2012-07-16 01:14:22.229675"
+  },
+  {
+    "id": 41,
+    "artwork_id": 1664,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 01:14:22.230573",
+    "updated_at": "2012-07-16 01:14:22.230573"
+  },
+  {
+    "id": 42,
+    "artwork_id": 1659,
+    "study_id": 21,
+    "position": null,
+    "created_at": "2012-07-16 01:14:22.231470",
+    "updated_at": "2012-07-16 01:14:22.231470"
+  },
+  {
+    "id": 43,
+    "artwork_id": 1743,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 01:16:03.072602",
+    "updated_at": "2012-07-16 01:16:03.072602"
+  },
+  {
+    "id": 44,
+    "artwork_id": 1744,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 01:16:03.073142",
+    "updated_at": "2012-07-16 01:16:03.073142"
+  },
+  {
+    "id": 45,
+    "artwork_id": 1815,
+    "study_id": 22,
+    "position": null,
+    "created_at": "2012-07-16 01:16:03.073636",
+    "updated_at": "2012-07-16 01:16:03.073636"
+  },
+  {
+    "id": 46,
+    "artwork_id": 1637,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 01:18:26.085352",
+    "updated_at": "2012-07-16 01:18:26.085352"
+  },
+  {
+    "id": 47,
+    "artwork_id": 1636,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 01:18:26.086318",
+    "updated_at": "2012-07-16 01:18:26.086318"
+  },
+  {
+    "id": 48,
+    "artwork_id": 1485,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 01:18:26.087211",
+    "updated_at": "2012-07-16 01:18:26.087211"
+  },
+  {
+    "id": 49,
+    "artwork_id": 1490,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 01:18:26.088104",
+    "updated_at": "2012-07-16 01:18:26.088104"
+  },
+  {
+    "id": 50,
+    "artwork_id": 1634,
+    "study_id": 24,
+    "position": null,
+    "created_at": "2012-07-16 01:18:26.089012",
+    "updated_at": "2012-07-16 01:18:26.089012"
+  },
+  {
+    "id": 51,
+    "artwork_id": 1956,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 01:19:57.080364",
+    "updated_at": "2012-07-16 01:19:57.080364"
+  },
+  {
+    "id": 52,
+    "artwork_id": 1911,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 01:19:57.080899",
+    "updated_at": "2012-07-16 01:19:57.080899"
+  },
+  {
+    "id": 53,
+    "artwork_id": 1872,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 01:19:57.081417",
+    "updated_at": "2012-07-16 01:19:57.081417"
+  },
+  {
+    "id": 54,
+    "artwork_id": 1756,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 01:19:57.081907",
+    "updated_at": "2012-07-16 01:19:57.081907"
+  },
+  {
+    "id": 55,
+    "artwork_id": 1757,
+    "study_id": 25,
+    "position": null,
+    "created_at": "2012-07-16 01:19:57.082446",
+    "updated_at": "2012-07-16 01:19:57.082446"
+  },
+  {
+    "id": 56,
+    "artwork_id": 1710,
+    "study_id": 26,
+    "position": null,
+    "created_at": "2012-07-16 01:20:37.567743",
+    "updated_at": "2012-07-16 01:20:37.567743"
+  },
+  {
+    "id": 57,
+    "artwork_id": 1618,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.258276",
+    "updated_at": "2012-07-16 01:23:05.258276"
+  },
+  {
+    "id": 58,
+    "artwork_id": 1520,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.258811",
+    "updated_at": "2012-07-16 01:23:05.258811"
+  },
+  {
+    "id": 59,
+    "artwork_id": 1510,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.259334",
+    "updated_at": "2012-07-16 01:23:05.259334"
+  },
+  {
+    "id": 60,
+    "artwork_id": 1599,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.259820",
+    "updated_at": "2012-07-16 01:23:05.259820"
+  },
+  {
+    "id": 61,
+    "artwork_id": 1551,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.260313",
+    "updated_at": "2012-07-16 01:23:05.260313"
+  },
+  {
+    "id": 62,
+    "artwork_id": 1625,
+    "study_id": 28,
+    "position": null,
+    "created_at": "2012-07-16 01:23:05.260814",
+    "updated_at": "2012-07-16 01:23:05.260814"
+  },
+  {
+    "id": 63,
+    "artwork_id": 1765,
+    "study_id": 30,
+    "position": null,
+    "created_at": "2012-07-16 01:25:18.662378",
+    "updated_at": "2012-07-16 01:25:18.662378"
+  },
+  {
+    "id": 64,
+    "artwork_id": 1771,
+    "study_id": 30,
+    "position": null,
+    "created_at": "2012-07-16 01:25:18.662997",
+    "updated_at": "2012-07-16 01:25:18.662997"
+  },
+  {
+    "id": 65,
+    "artwork_id": 1855,
+    "study_id": 30,
+    "position": null,
+    "created_at": "2012-07-16 01:25:18.663469",
+    "updated_at": "2012-07-16 01:25:18.663469"
+  },
+  {
+    "id": 66,
+    "artwork_id": 1764,
+    "study_id": 30,
+    "position": null,
+    "created_at": "2012-07-16 01:25:18.663942",
+    "updated_at": "2012-07-16 01:25:18.663942"
+  },
+  {
+    "id": 67,
+    "artwork_id": 1763,
+    "study_id": 30,
+    "position": null,
+    "created_at": "2012-07-16 01:25:18.664526",
+    "updated_at": "2012-07-16 01:25:18.664526"
+  },
+  {
+    "id": 68,
+    "artwork_id": 1716,
+    "study_id": 31,
+    "position": null,
+    "created_at": "2012-07-16 01:25:46.619022",
+    "updated_at": "2012-07-16 01:25:46.619022"
+  },
+  {
+    "id": 69,
+    "artwork_id": 1760,
+    "study_id": 31,
+    "position": null,
+    "created_at": "2012-07-16 01:25:46.619545",
+    "updated_at": "2012-07-16 01:25:46.619545"
+  },
+  {
+    "id": 70,
+    "artwork_id": 1835,
+    "study_id": 31,
+    "position": null,
+    "created_at": "2012-07-16 01:25:46.620023",
+    "updated_at": "2012-07-16 01:25:46.620023"
+  },
+  {
+    "id": 71,
+    "artwork_id": 1730,
+    "study_id": 32,
+    "position": null,
+    "created_at": "2012-07-16 01:26:46.906371",
+    "updated_at": "2012-07-16 01:26:46.906371"
+  },
+  {
+    "id": 72,
+    "artwork_id": 1827,
+    "study_id": 32,
+    "position": null,
+    "created_at": "2012-07-16 01:26:46.906909",
+    "updated_at": "2012-07-16 01:26:46.906909"
+  },
+  {
+    "id": 73,
+    "artwork_id": 1928,
+    "study_id": 32,
+    "position": null,
+    "created_at": "2012-07-16 01:26:46.907410",
+    "updated_at": "2012-07-16 01:26:46.907410"
+  }
+]

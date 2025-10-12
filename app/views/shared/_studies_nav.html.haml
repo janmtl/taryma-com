@@ -1,3 +1,0 @@
-%ul.studies
-  - @all_studies.each do |study|
-    %li= link_to '', view_study_path(study), {:class => ['nav-skip', (study == @study.id) ? 'selected' : ''], :id => study}
