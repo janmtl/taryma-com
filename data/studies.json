@@ -1,0 +1,138 @@
+[
+    {
+      "id": 6,
+      "name": "Venice",
+      "description": "In Venice, I was struck by the constant murmur of water lapping against stone. The very air felt magically moist against my skin. There is a faint scent of decay, a blend of rotting foundations, crumbling plaster, and sediment slushing around the canal floors. Together, the sensory impact is unforgettable and magical, perfectly evoking the watery essence of the city.",
+      "position": 1,
+      "created_at": "2012-07-13 19:16:09.456025",
+      "updated_at": "2012-07-15 16:54:39.632988"
+    },
+    {
+      "id": 17,
+      "name": "Arizona",
+      "description": "After my trip to Arizona in 2006, I concluded that there should be a color of paint pigment called “Arizona Red” – like, for example, “Naples Yellow” – which depicts the rusty color of Arizona’s vast canyons and towering sandstone spires. One of the Seven Natural Wonders of the World, the Grand Canyon offers countless ways to excite the spirit, indulge the soul, and inspire creativity.",
+      "position": 2,
+      "created_at": "2012-07-15 20:03:59.767811",
+      "updated_at": "2012-07-15 20:03:59.767811"
+    },
+    {
+      "id": 18,
+      "name": "Yellowstone",
+      "description": "During my visit to Yellowstone in 2007, I was inspired by the Native American history. We must all contemplate this as a serious and very dramatic warning. Their pictures show so much justified pride as well as great sadness. As an example, please look at my artistic impression of the honorable “Bird Chief, Prominent Chief of the Arapahoe”.",
+      "position": 3,
+      "created_at": "2012-07-15 20:10:22.835742",
+      "updated_at": "2012-07-15 20:10:22.835742"
+    },
+    {
+      "id": 19,
+      "name": "Rocky Mountains",
+      "description": "In 2005, while relocating from Ontario to California, I had a fantastic experience driving through all of Canada, from the East to the West coast. The Rocky Mountains were the most spectacular of all the many strong impressions along the way. It is obvious why places like Lake Louise and Banff are known as the “Jewel of the Rockies.” Lake Louise, with its turquoise water set against the stark backdrop of Victoria Glacier, is one of the most beloved and most photographed scenes of the Canadian Rockies.",
+      "position": 4,
+      "created_at": "2012-07-16 01:10:49.523386",
+      "updated_at": "2012-07-16 01:10:49.523386"
+    },
+    {
+      "id": 20,
+      "name": "Trees",
+      "description": "I have always been puzzled why the works of masters are so appealing, while the works of less skillful artists are not. I think the full explanation is in nature. For thousands of years, humans interacted only with nature, where the growth pattern of every tree and plant follows the same simple principle discovered by Fibonacci. In mathematics, the Fibonacci sequence defines the Golden Ratio, which is so fundamental and beautiful in art. Our acceptance of beauty is so fully conditioned by what we constantly see around us that anything else is not beautiful at all. Trees are the best example of this beauty.",
+      "position": 5,
+      "created_at": "2012-07-16 01:13:00.911313",
+      "updated_at": "2012-07-16 01:13:00.911313"
+    },
+    {
+      "id": 21,
+      "name": "Fish",
+      "description": "In late September of 2004, my husband introduced me to fishing in Port Hope, Ontario. I was hooked right away. I tried to catch a 25 lb. king salmon on a 4 lb. strong fishing line. It took half an hour and a lot of physical strength and skill, but I did it many times on my very first day of fishing. The quickest route to successful fishing is to be in the right place at the right time and have an experienced teacher. In the following years, I have enjoyed fishing in Canada, Alaska and California’s Pacific Ocean. I have even caught a small shark!",
+      "position": 6,
+      "created_at": "2012-07-16 01:14:22.227368",
+      "updated_at": "2012-07-16 01:14:22.227368"
+    },
+    {
+      "id": 22,
+      "name": "American Natives",
+      "description": "Many stunning collections of duotone photographs taken in the late nineteenth and early twentieth centuries capture the dignity, richness and beauty of Native American civilization. The development of photography as an art and the devastation of the Native Americans took place simultaneously. These photographs are a very strong artistic inspiration for me.",
+      "position": 7,
+      "created_at": "2012-07-16 01:16:03.071791",
+      "updated_at": "2012-07-16 01:16:03.071791"
+    },
+    {
+      "id": 23,
+      "name": "The Alaskan Trapper",
+      "description": "During my trip to Alaska in 2008, I met a real Alaskan Trapper. This was quite far north of the Arctic Circle in August – look at the size of the shades on our photo. His Magnum was ready for another Grizzly! He had already made his hat from one as you can see in the photo and his bed from others. He was one of the kindest people I have ever met, and so was his daughter. He was a great inspiration to my spirit, my soul and my work. I only can dream of seeing him again.",
+      "position": 8,
+      "created_at": "2012-07-16 01:17:09.118572",
+      "updated_at": "2012-07-16 01:17:09.118572"
+    },
+    {
+      "id": 24,
+      "name": "Canada Geese",
+      "description": "One of the surest signs that the season is changing is the familiar “V-shaped” flock of Canada Geese honking away as they fly overhead on their migration. Starting in late winter, the Geese travel north, making several stops to feed and rest along the way. In 2003, I visited one of their resting places near Ottawa, Ontario, where there are thousands resting and feeding in one place.",
+      "position": 9,
+      "created_at": "2012-07-16 01:18:26.084049",
+      "updated_at": "2012-07-16 02:20:55.878908"
+    },
+    {
+      "id": 26,
+      "name": "Selection",
+      "description": "",
+      "position": 11,
+      "created_at": "2012-07-16 01:20:37.566597",
+      "updated_at": "2012-07-16 01:20:37.566597"
+    },
+    {
+      "id": 27,
+      "name": "Posters",
+      "description": "I was fortunate to be personally invited to study for over 5 years and graduate under one of the most famous Polish artists, <a href=\"http://polish-art.info/starowieyski.html\">F. Starowieyski</a> (<a href=\"http://www.starowieyski.com/\">[2]</a>, <a href=\"http://www.posterpage.ch/exhib/ex81_sta/ex81_sta.htm\">[3]</a>, <a href=\"http://www.theartofposter.com/fstarowi.htm\">[4]</a>). He was the first Polish artist to have a one man show at the Museum of Modern Art in New York in 1986. One of his artistic pursuits was posters. With these posters, I am following in his footsteps.",
+      "position": 12,
+      "created_at": "2012-07-16 01:21:28.256883",
+      "updated_at": "2012-07-16 01:21:28.256883"
+    },
+    {
+      "id": 28,
+      "name": "Drawings",
+      "description": "We have all emerged from an ocean with webbed fingers. Our tears and blood are salt. Drawings are the best technique to express it. For me, most if not all famous oil painters, including Leonardo and Rembrandt were much more expressive in their drawings than in their oil paintings. Drawing is like studying the Ancient Greeks or Classical Piano – you cannot draw from your conscious mind; it is too naïve. You must use your subconscious in some magical way to express yourself.",
+      "position": 13,
+      "created_at": "2012-07-16 01:23:05.257520",
+      "updated_at": "2012-07-16 01:23:05.257520"
+    },
+    {
+      "id": 29,
+      "name": "Mexico",
+      "description": "On our honeymoon we went to the Mayan Riviera in Mexico. We experienced the ruins of Tulum, snorkeled in the largest natural aquarium in the world in Xel-Ha, but most importantly we visited Chichen Itza pyramids. The echoes they create when you simply clap your hands are amazing and have been studied by many scientists. Despite the beautiful scenery, the biggest inspiration to me was the Mexican people.",
+      "position": 14,
+      "created_at": "2012-07-16 01:23:36.183439",
+      "updated_at": "2012-07-16 01:23:36.183439"
+    },
+    {
+      "id": 30,
+      "name": "Water",
+      "description": "Water is one of the most fascinating subjects to paint. It captures light, movement, and endless recursions of geometry while managing to be a visually emotive subject. Remember the feeling of a wave crashing on your feet at the ocean shore as you surround yourself with the natural beauty of water.",
+      "position": 15,
+      "created_at": "2012-07-16 01:25:18.661629",
+      "updated_at": "2012-07-16 01:25:18.661629"
+    },
+    {
+      "id": 31,
+      "name": "Lake Mono",
+      "description": "One of the oldest lakes in the western hemisphere, Mono Lake, located in California’s spectacular Eastern Sierra, is hauntingly beautiful. The most distinctive feature of Mono Lake is its eerie tufa towers – mineral structures created when fresh-water springs bubble up through the alkaline waters of the lake while the water level drops half a foot each year. My visit to Mono Lake in 2006 left everlasting unique artistic impressions in my memory.",
+      "position": 18,
+      "created_at": "2012-07-16 01:25:46.618282",
+      "updated_at": "2012-07-16 01:27:26.193678"
+    },
+    {
+      "id": 32,
+      "name": "Algonquin",
+      "description": "Algonquin Park in Ontario, Canada, inspires many painters, including the famous “Group of Seven”, with its 2400 lakes, 800 miles of streams and rivers, and unique mixture of forest types. The best way to explore Algonquin Park is by canoe, carrying all your gear from lake to lake – the latter is definitely the fun part! After only one day of traveling towards the Park interior, you will have the spectacular Canadian wilderness all to yourself.",
+      "position": 16,
+      "created_at": "2012-07-16 01:26:46.905391",
+      "updated_at": "2012-07-16 01:26:46.905391"
+    },
+    {
+      "id": 33,
+      "name": "Copies of Masters",
+      "description": "Copying freely such masters as Leonardo or Klimt allows me to better comprehend and appreciate the history of art, and trains my technical skills. I always create copies in a 1:1 scale in order to experience the feelings and emotions the artist experienced during the act of creation as closely as I can. It is a great artistic adventure for me to go back in time, sometimes by several centuries, and try to feel just a bit of what the artist was feeling.",
+      "position": 17,
+      "created_at": "2012-07-16 01:27:07.742283",
+      "updated_at": "2012-07-16 01:27:07.742283"
+    }
+  ]

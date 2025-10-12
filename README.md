@@ -1,33 +1,58 @@
-# README
+# Taryma.com
 
-## Prerequisites:
+Source files for the Ewa Taryma-Myslinski art portfolio website, built with Hugo static site generator.
 
-* A server with Docker Engine installed.
-* The application source code available on the server.
-* The value of the RAILS_MASTER_KEY from config/master.key.
+## Prerequisites
 
-## Deployment Steps:
+Install Hugo (extended version recommended):
 
-### Build the Docker Image:
-Navigate to the application's root directory and run the build command. This will create a Docker image named taryma_com.
+```bash
+# Ubuntu/Debian
+sudo snap install hugo
 
+# or using apt
+sudo apt install hugo
+
+# macOS
+brew install hugo
+
+# For other systems, see: https://gohugo.io/installation/
 ```
-docker build -t taryma_com .
+
+## Development
+
+To run the development server:
+
+```bash
+hugo server -D
 ```
 
-### Run the Docker Container:
-Execute the following command to start the application. You must replace <value from config/master.key> with your actual RAILS_MASTER_KEY.
+Then open your browser to `http://localhost:1313`
 
-````
-docker run -d -p 80:80 \
-  -e RAILS_MASTER_KEY=<value from config/master.key> \
-  -v "$(pwd)/storage":/rails/storage \
-  --name taryma_com taryma_com
-````
-* `-d`: Runs the container in detached mode.
-* `-p 80:80`: Maps port 80 on the host to port 80 in the container.
-* `-e RAILS_MASTER_KEY=...`: Securely provides the master key as an environment variable.
-* `--name taryma_com`: Assigns a name to the container for easier management.
+## Building the Site
 
-### Database and Application Setup:
-The Dockerfile specifies an ENTRYPOINT script that likely handles database creation, migrations, and other setup tasks automatically when the container starts.
+To build the static site:
+
+```bash
+hugo
+```
+
+The built site will be in the `public/` directory.
+
+## Project Structure
+
+- `content/` - Markdown content files
+  - `bio.md` - Biography page
+  - `exhibitions.md` - Exhibitions list
+  - `studies/` - Art study pages
+- `layouts/` - HTML templates
+  - `_default/baseof.html` - Base template
+  - `_default/single.html` - Single page template
+  - `_default/list.html` - List page template
+  - `index.html` - Home page template
+- `static/` - Static assets (CSS, images)
+- `hugo.toml` - Hugo configuration
+
+## Deployment
+
+After building with `hugo`, deploy the contents of the `public/` directory to your web server.
