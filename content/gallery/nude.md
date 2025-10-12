@@ -262,14 +262,6 @@ title: "Nude"
 </div>
  
 <div class="gallery-card">
-    <a href='https://taryma-com-public.hel1.your-objectstorage.com/artworks/56.jpg'>
-        <img src='https://taryma-com-public.hel1.your-objectstorage.com/artworks-browse/56.jpg' alt=' Nude 88' title=' Nude 88' />
-    </a>
-    <h4> Nude 88</h4>
-    <p> Charcoal on paper, 1/1/2003 (100.0 x 70.0 cm)</p>
-</div>
- 
-<div class="gallery-card">
     <a href='https://taryma-com-public.hel1.your-objectstorage.com/artworks/414.jpg'>
         <img src='https://taryma-com-public.hel1.your-objectstorage.com/artworks-browse/414.jpg' alt=' Nude 4' title=' Nude 4' />
     </a>
