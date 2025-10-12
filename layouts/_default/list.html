@@ -13,7 +13,6 @@
         </header>
 
         <div class="list-content">
-            {{ if eq .Section "studies" }}
             <div class="studies-list">
                 {{ range .Pages.ByWeight }}
                 <article class="study-item">
@@ -24,13 +23,6 @@
                 </article>
                 {{ end }}
             </div>
-            {{ else }}
-            <ul class="page-list">
-                {{ range .Pages }}
-                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                {{ end }}
-            </ul>
-            {{ end }}
         </div>
     </article>
 </div>

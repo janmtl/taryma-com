@@ -112,7 +112,7 @@ main {
 /* Page Content */
 .page-content,
 .list-content {
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 .page-content h1,
@@ -215,6 +215,46 @@ main {
 }
 
 .study-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.gallery-card {
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-card h4 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.gallery-card h4 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.gallery-card h4 a:hover {
+    color: #0066cc;
+}
+
+.gallery-card p {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
