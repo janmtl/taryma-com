@@ -1,0 +1,11 @@
+
+---
+title: "Mexico"
+date: 2012-07-16
+weight: 14
+description: "On our honeymoon we went to the Mayan Riviera in Mexico. We experienced the ruins of Tulum, snorkeled in the largest natural aquarium in the world in Xel-Ha, but most importantly we visited Chichen Itza pyramids. The echoes they create when you simply clap your hands are amazing and have been studied by many scientists. Despite the beautiful scenery, the biggest inspiration to me was the Mexican people."
+---
+
+On our honeymoon we went to the Mayan Riviera in Mexico. We experienced the ruins of Tulum, snorkeled in the largest natural aquarium in the world in Xel-Ha, but most importantly we visited Chichen Itza pyramids. The echoes they create when you simply clap your hands are amazing and have been studied by many scientists. Despite the beautiful scenery, the biggest inspiration to me was the Mexican people.
+
+ 

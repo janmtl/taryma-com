@@ -1,0 +1,38 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <article class="list-page">
+        <header class="page-header">
+            <h2>{{ .Title }}</h2>
+            {{ if .Content }}
+            <div class="page-intro">
+                {{ .Content }}
+            </div>
+            {{ end }}
+        </header>
+
+        <div class="list-content">
+            {{ if eq .Section "studies" }}
+            <div class="studies-list">
+                {{ range .Pages.ByWeight }}
+                <article class="study-item">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    {{ if .Params.description }}
+                    <p class="study-description">{{ .Params.description }}</p>
+                    {{ end }}
+                </article>
+                {{ end }}
+            </div>
+            {{ else }}
+            <ul class="page-list">
+                {{ range .Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}
+

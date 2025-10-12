@@ -72,16 +72,8 @@
       "updated_at": "2012-07-16 02:20:55.878908"
     },
     {
-      "id": 25,
-      "name": "Selection 1",
-      "description": "",
-      "position": 10,
-      "created_at": "2012-07-16 01:19:57.079625",
-      "updated_at": "2012-07-16 01:19:57.079625"
-    },
-    {
       "id": 26,
-      "name": "Selection 2",
+      "name": "Selection",
       "description": "",
       "position": 11,
       "created_at": "2012-07-16 01:20:37.566597",

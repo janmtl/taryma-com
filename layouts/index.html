@@ -1,0 +1,27 @@
+{{ define "title" }}{{ .Site.Title }} - Artist Portfolio{{ end }}
+
+{{ define "main" }}
+<div class="container">
+    <section class="hero">
+        <h2>Welcome</h2>
+        <div class="hero-content">
+            {{ .Content }}
+        </div>
+    </section>
+
+    <section class="featured-studies">
+        <h3>Studies</h3>
+        <div class="studies-grid">
+            {{ range first 60 (where .Site.RegularPages "Section" "studies") }}
+            <article class="study-card">
+                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                {{ if .Params.description }}
+                <p>{{ .Params.description | truncate 150 }}</p>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+    </section>
+</div>
+{{ end }}
+

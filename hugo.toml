@@ -1,0 +1,34 @@
+baseURL = "https://taryma.com/"
+languageCode = "en-us"
+title = "Ewa Taryma-Myslinski"
+
+[params]
+  description = "Artist Portfolio - Paintings, Drawings, and Studies"
+  author = "Ewa Taryma-Myslinski"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "Bio"
+    url = "/bio/"
+    weight = 2
+  
+  [[menu.main]]
+    name = "Exhibitions"
+    url = "/exhibitions/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "Studies"
+    url = "/studies/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+

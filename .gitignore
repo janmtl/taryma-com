@@ -3,3 +3,23 @@ artworks/
 artworks-browse/
 images/
 images-browse/
+taryma-com-media.zip
+
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
