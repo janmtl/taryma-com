@@ -56,3 +56,7 @@ The built site will be in the `public/` directory.
 ## Deployment
 
 After building with `hugo`, deploy the contents of the `public/` directory to your web server.
+
+## Gallery
+
+The gallery data is located in `data/gallery.json` and includes all 657 artworks. To build the gallery files in `content/gallery/*.md`, you can run the script `data/build_gallery.py`. First ensure that you have pandas installed with `pip install pandas`, then run `cd data; python3 build_gallery.py`.
